@@ -1,5 +1,5 @@
 # azure-and-k8s-architectutre
-![Cloud Architecture](https://github.com/stephaneey/azure-and-k8s-architecture/blob/main/images/cloudarchidiagrams.png)
+![Cloud Architecture](https://github.com/stephaneey/azure-and-k8s-architectutre/blob/main/images/cloudarchidiagrams.png)
 
 The purpose of this repo is to share some real-world inspired Azure and K8s architecture diagrams, that may help organizations accelerate their adoption of Azure and K8s. Each diagram will be accompanied by a textual explanation with the attention points.
 

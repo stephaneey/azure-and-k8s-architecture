@@ -17,4 +17,4 @@ Although APIM's main endpoint is perfectly able to handle a global deployment on
 
 ### Internet facing requirements
 
-In 12/23, Front Door does not integrate with fully private API Management instance. It is explained in more details in the ad-hoc diagrams and markdown files.
+In 12/23, Front Door does not integrate with fully private API Management instances. It is explained in more details in the ad-hoc diagrams and markdown files.

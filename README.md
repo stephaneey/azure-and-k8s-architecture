@@ -10,3 +10,5 @@ Note: K8s diagrams will follow :).
 | Release date | Description |Link
 | ----------- | ----------- | ----------- |
 | 2023/11/25 | These diagrams help you understand how to deploy a global API platform. |[Multi-region API deployment in two flavors](https://github.com/stephaneey/azure-and-k8s-architecture/tree/main/api%20management/multi-region-setup) |
+| 2023/12/04 | These diagrams help you understand how to handle East-West traffic in the traditional Azure Hub & Spoke as well as in Virtual WAN. |[East-West with Hub & Spoke and VWAN](https://github.com/stephaneey/azure-and-k8s-architecture/tree/main/networking/hub%20and%20spoke/east-west-traffic) |
+| 2023/11/25 | These diagrams help you understand how to deploy a global API platform. |[East-West within AKS](https://github.com/stephaneey/azure-and-k8s-architecture/tree/main/networking/azure-kubernetes-service/east-west-traffic) |

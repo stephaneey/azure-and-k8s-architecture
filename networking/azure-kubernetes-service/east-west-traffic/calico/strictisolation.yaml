@@ -1,0 +1,166 @@
+# Note: this file is used as an example to illustrate east-west traffic within a cluster. It does
+# not follow best practices for K8s deployments (no securitycontext, no resource limits, etc.)
+# This example assumes that you have labelled your node pools accordingly.
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: tenant1
+  labels:
+    name: tenant1
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  namespace: tenant1
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: "stack"
+                operator: In
+                values:
+                - "tenant1"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: busybox-deployment
+  namespace: tenant1
+spec:
+  selector:
+    matchLabels:
+      app: busybox
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: busybox
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: "stack"
+                operator: In
+                values:
+                - "tenant1"
+      containers:
+      - name: busybox
+        image: busybox
+        command: ["/bin/sh"]
+        args: ["-c", "sleep 3600"]
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+  namespace: tenant1
+spec:
+  selector:
+    app: nginx
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: tenant2
+  labels:
+    name: tenant2
+---
+# NGINX deployment in namespace2
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  namespace: tenant2
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: "stack"
+                operator: In
+                values:
+                - "tenant2"
+---
+# K8s service in front of nginx deployment in namespace2
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+  namespace: tenant2
+spec:
+  selector:
+    app: nginx
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: busybox-deployment
+  namespace: tenant2
+spec:
+  selector:
+    matchLabels:
+      app: busybox
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: busybox
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: "stack"
+                operator: In
+                values:
+                - "tenant2"
+      containers:
+      - name: busybox
+        image: busybox
+        command: ["/bin/sh"]
+        args: ["-c", "sleep 3600"]        
+      
+---    

@@ -1,0 +1,107 @@
+# Deny-All policy ==> very restrictive. Purpose is to gradually open up.
+apiVersion: projectcalico.org/v3
+kind: GlobalNetworkPolicy
+metadata:
+  name: deny-all
+spec:  
+  selector: projectcalico.org/namespace not in  {'kube-system', 'calico-system', 'tigera-operator','gatekeeper-system','kube-public','kube-node-lease'}
+  types:
+  - Ingress
+  - Egress
+  ingress:
+  - action: Deny
+  egress:
+  - action: Deny
+---
+# Allow-DNS policy ==> must open this from scracth, else nothing works.
+apiVersion: projectcalico.org/v3
+kind: GlobalNetworkPolicy
+metadata:
+  name: allow-dns
+spec:
+  selector: all()
+  types:
+  - Ingress
+  - Egress
+  ingress:
+  - action: Allow
+    protocol: UDP
+    destination:
+      ports:
+      - 53
+  egress:
+  - action: Allow
+    protocol: UDP
+    destination:
+      ports:
+      - 53
+---
+# Example of a policy that allows namespace 1 to talk to namespace 2 and namespace 2 to receive calls from namespace1
+apiVersion: projectcalico.org/v3
+kind: GlobalNetworkPolicy
+metadata:
+  name: allow-namespace1-to-namespace2
+spec:
+  selector: projectcalico.org/namespace == 'namespace1'
+  types:
+  - Egress
+  - Ingress
+  egress:
+  - action: Allow
+    destination:
+      selector: projectcalico.org/namespace == 'namespace2'
+  ingress:
+  - action: Allow
+    source:
+      selector: projectcalico.org/namespace == 'namespace1'
+---
+# Example of a policy that allows namespace 1 to talk to itself 
+apiVersion: projectcalico.org/v3
+kind: GlobalNetworkPolicy
+metadata:
+  name: allow-namespace1-intra-communication
+spec:
+  selector: projectcalico.org/namespace == 'namespace1'
+  types:
+  - Ingress
+  - Egress
+  ingress:
+  - action: Allow
+    source:
+      selector: projectcalico.org/namespace == 'namespace1'
+  egress:
+  - action: Allow
+    destination:
+      selector: projectcalico.org/namespace == 'namespace1'
+---
+# Calico NetworkPolicy to allow frontend to talk to backend
+apiVersion: projectcalico.org/v3
+kind: NetworkPolicy
+metadata:
+  name: allow-frontend-to-backend
+  namespace: ntierapp
+spec:
+  selector: app == 'frontend'
+  order: 1
+  types:
+  - Egress  
+  egress:
+  - action: Allow
+    destination:
+      selector: app == 'backend'  
+---
+apiVersion: projectcalico.org/v3
+kind: NetworkPolicy
+metadata:
+  name: allow-backend-from-frontend
+  namespace: ntierapp
+spec:
+  selector: app == 'backend'
+  order: 2
+  types:  
+  - Ingress  
+  ingress:
+  - action: Allow
+    source:
+      selector: app == 'frontend'
+---

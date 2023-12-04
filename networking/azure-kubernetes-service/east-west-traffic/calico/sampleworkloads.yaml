@@ -1,0 +1,197 @@
+# Note: this file is used as an example to illustrate east-west traffic within a cluster. It does
+# not follow best practices for K8s deployments (no securitycontext, no resource limits, etc.)
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: namespace1
+  labels:
+    name: namespace1
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: namespace2
+  labels:
+    name: namespace2
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ntierapp
+  labels:
+    name: ntierapp
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  namespace: namespace1
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
+---
+# K8s service in front of nginx deployment in namespace1
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+  namespace: namespace1
+spec:
+  selector:
+    app: nginx
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+---
+# NGINX deployment in namespace2
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  namespace: namespace2
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
+---
+# K8s service in front of nginx deployment in namespace2
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+  namespace: namespace2
+spec:
+  selector:
+    app: nginx
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+---
+# Busybox deployment in namespace2
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: busybox-deployment
+  namespace: namespace2
+spec:
+  selector:
+    matchLabels:
+      app: busybox
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: busybox
+    spec:
+      containers:
+      - name: busybox
+        image: busybox
+        command: ["/bin/sh"]
+        args: ["-c", "sleep 3600"]
+---
+# Busybox deployment in namespace1
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: busybox-deployment
+  namespace: namespace1
+spec:
+  selector:
+    matchLabels:
+      app: busybox
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: busybox
+    spec:
+      containers:
+      - name: busybox
+        image: busybox
+        command: ["/bin/sh"]
+        args: ["-c", "sleep 3600"]
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  namespace: ntierapp
+spec:
+  selector:
+    matchLabels:
+      app: frontend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+      - name: busybox
+        image: busybox
+        command: ["/bin/sh"]
+        args: ["-c", "sleep 3600"]
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: ntierapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
+---
+# K8s service in front of nginx deployment in namespace1
+apiVersion: v1
+kind: Service
+metadata:
+  name: ntierservice
+  namespace: ntierapp
+  labels:
+    app: backend
+    service: ntierservice
+spec:
+  selector:
+    app: backend
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+---

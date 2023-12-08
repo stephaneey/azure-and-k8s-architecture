@@ -1,6 +1,6 @@
 
 # Diagram
-![frontdoor-apim-option1](https://github.com/stephaneey/azure-and-k8s-architecture/blob/main/api%20management/images/frontdoorapim2.png)
+![frontdoor-apim-option1](./images/frontdoorapim2.png)
 
 # Attention Points
 ## (1) User traffic routing 

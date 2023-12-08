@@ -1,6 +1,6 @@
 
 # Diagram
-![frontdoor-apim-option1](./images/frontdoorapim1.png)
+![frontdoor-apim-option1](../images/frontdoorapim1.png)
 
 # Attention Points
 ## (1) User traffic routing 

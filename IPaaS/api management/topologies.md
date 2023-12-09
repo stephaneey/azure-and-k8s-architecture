@@ -1,6 +1,6 @@
 
 # Diagram
-![apim-topologies](../images/apim-topologies.png)
+![apim-topologies](./images/apim-topologies.png)
 
 # Attention Points
 ## Front Door

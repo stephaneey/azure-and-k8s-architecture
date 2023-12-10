@@ -13,4 +13,4 @@ Each folder has purpose-built diagrams along with markdown files that highlights
 | 2023/12/04 | These diagrams help you understand how to deploy a global API platform. |[East-West within AKS](https://github.com/stephaneey/azure-and-k8s-architecture/tree/main/networking/azure-kubernetes-service/east-west-traffic) |
 | 2023/12/08 | Added a page with a few networking tips. |[Azure Networking Tips](https://github.com/stephaneey/azure-and-k8s-architecture/tree/main/networking/networkingtips.md) |
 | 2023/12/08 | Added a page with a few API Management topologies. |[Azure API Management Topologies](https://github.com/stephaneey/azure-and-k8s-architecture/tree/main/IPaaS/api%20management/topologies.md) |
-| 2023/12/09 | Added a page showing a Biztalk-like IPaaS approach. |[Biztalk-like IPaaS approach](https://github.com/stephaneey/azure-and-k8s-architecture/tree/main/IPaaS/biztalk-like-IPaaS-pattern.md) |
+| 2023/12/09 | Added a page showing a Biztalk-like IPaaS approach. |[Biztalk-like IPaaS approach](https://github.com/stephaneey/azure-and-k8s-architecture/tree/main/IPaaS/patterns/biztalk-like-IPaaS-pattern.md) |

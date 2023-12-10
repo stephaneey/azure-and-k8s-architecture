@@ -1,6 +1,6 @@
 # API Management
 - Did you know that you can use *localhost* in APIM policies? This allows you to call other APIs without leaving the APIM boundaries.
-- Scopes inherit from policies by default. Just remove the *<base/>* tag from a given scope to stop inheritance
+- Scopes inherit from policies by default. Just remove the *&lt;base/>* tag from a given scope to stop inheritance
 - Use *named values* instead of hard-coding everything in your policies
 - Make use of *policy fragments* to reuse fragments across policies
 - Leverage the *workspace* feature to share a single instance across teams.

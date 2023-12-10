@@ -1,6 +1,6 @@
 
 # Diagram
-![apim-topologies](./images/biztalk-like-IPaaS-pattern.png)
+![apim-topologies](../images/biztalk-like-IPaaS-pattern.png)
 
 The purpose of such an approach is to mimic Biztalk, which was heavily used on-premises. Biztalk acted as a true integration platform to rule and handle inter-application communication in a centralized way.
 

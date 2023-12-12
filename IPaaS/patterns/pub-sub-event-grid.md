@@ -1,7 +1,7 @@
-# PUB/SUB with Azure Event Grid in PUSH Mode
+# PUB/SUB with Azure Event Grid in PUSH/PUSH Mode
 ![pub-sub-servicebus](../images/pubsubeventgridpush.png)
 
-The PUB/SUB pattern is popular in Event-Driven Architectures and Microservices. The producer of a message is agnostic of its subscriber(s). Each subscriber receives a copy of the original message sent by the topic.
+The PUB/SUB pattern is popular in Event-Driven Architectures and Microservices. The producer of a message is agnostic of its subscriber(s). Each subscriber receives a copy of the original message sent by the topic. The above diagram and below attention points are applicable only to Event Grid in PUSH/PUSH mode. To be clear, PUSH/PUSH means that the sender **pushes** the event while the receiver is **notified** through a **push** mechanism. In other words, Event Grid initiates the call to notify the receiving party.
 
 # Attention points
 ## (1) Topic type

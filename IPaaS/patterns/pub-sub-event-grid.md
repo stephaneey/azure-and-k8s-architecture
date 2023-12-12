@@ -4,7 +4,7 @@
 The PUB/SUB pattern is popular in Event-Driven Architectures and Microservices. The producer of a message is agnostic of its subscriber(s). Each subscriber receives a copy of the original message sent by the topic.
 
 # Attention points
-## (1) Event type
+## (1) Topic type
 Event Grid gives us the possibility to work with:
 
 - Custom Topics to send our discrete events. These topics can be regrouped into a given domain

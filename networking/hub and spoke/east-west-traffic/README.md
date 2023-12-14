@@ -5,7 +5,7 @@ This traffic is always internal-only traffic within your Azure perimeter. Some o
 
 Note that the diagrams represent the most simplistic view of a real-world situtation. Many organizations deal with hundreds if not thousands of virtual networks, with a hard split between production and non-production, requiring ofen multiple hubs, etc. However, the principles highlighted in the ad-hoc diagrams still apply.
 
-In this section, we have:
+# Topics discussed in this section
 
 | Diagram | Description |Link
 | ----------- | ----------- | ----------- |

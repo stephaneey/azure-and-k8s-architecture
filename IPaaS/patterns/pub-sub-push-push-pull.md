@@ -20,7 +20,7 @@ This pattern is very similar to the previous one, except that you rely on Event 
 
 # Real world observations
 
-- The first pattern (Event Grid ==> Service Bus) is regularly used. I noticed that Service Bus is sometimes added later on because of scalability issues. As explained in the PUSH/PUSH section, handlers are not always able to follow the pace of Event Grid. In such a situation, Service Bus can be put an intermediate layer as a buffer, and let handlers dequeue at their own pace.
+- The first pattern (Event Grid ==> Service Bus) is regularly used. I noticed that Service Bus is sometimes added later on because of scalability issues. As explained in the PUSH/PUSH section, handlers are not always able to follow the pace of Event Grid. In such a situation, Service Bus can be put as an intermediate layer as a buffer, and let handlers dequeue at their own pace.
 
 - Since Event Grid Namespaces are a recent addition, I haven't seen them much used yet.
 

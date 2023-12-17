@@ -9,7 +9,7 @@
 - Did you know that you have to craft your own policies for disaster recovery purposes?
 
 # Networking
-- Port 25 is blocked in Azure. There is no way to expose SMTP over port 25 in DNAT rules!
+- Port 25 is blocked in Azure. There is no way to expose SMTP over port 25 in DNAT rules! If you have legacy SMTP servers, you can expose port 587 and translate it to 25.
 - To make sure private endpoints are sensitive to Network Security Group rules and/or broader IP ranges than /32, make sure to adjust this subnet level property **PrivateEndpointNetworkPolicies**.
 - Using a virtual machine's NIC's **effective routes** is a good way to troubleshoot routing issues.
 - Do no mix private link with access to internal perimeter. Private link only deals with **inbound** not **outbound**.

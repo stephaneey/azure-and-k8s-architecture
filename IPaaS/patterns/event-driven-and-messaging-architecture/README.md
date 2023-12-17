@@ -1,24 +1,29 @@
-# Integration Platform as a Service (IPaaS)
+# Events vs Messages
 
-IPaaS is a set of Azure services that are meant to satisfy most integration patteners. The main integration architecture patterns are:
+The boundary between events and messages is not always clear to everyone. Here are some key differences between events and messages
 
-- EDA Event-Driven Architecture
-    - Pub/Sub
-    - Event Notification (ie: webhooks)
-    - ...
-    
-- API-driven architectutre
-- Messaging
-- Data-specific patterns (ie: ETL and ELT, File Transert, etc.)
+- Events notify any interested party about **anything that already happened**.
+- Event producers and Event Consumers are **totally decoupled**.
+- Events do leverage the Publish/Subscribe pattern. 
+- Event producers own the payload schema.
+- Messages are often used to send a command to another service.
+- Messages are often used to wait a command completion from another service.
+- Messages are used in asynchronous communications between functionally **coupled** services. 
+- Messages are often involved in point-to-point, load-levelling and competing-consumer patterns
+- With messages, both senders and receivers need to agree on a common payload schema.
 
-On top, these patterns often rely on orchestrations or choreographies.
+Now, here is what they have in common:
+
+- They both leverage asynchronous communication.
+- They both contribute to a more scalable architecture.
+- They both contribute to a more resillient architecture.
+- They both are examples of distributed architectures.
+
 
 # Topics discussed in this section
 
 | Diagram | Description |Link
 | ----------- | ----------- | ----------- |
-| Biztalk-like IPaaS | This diagram shows how to leverage IPaaS to have a Bitalk-like experience, along with the pros & cons of such an approach|[Biztalk-like-IPaaS](./patterns/biztalk-like-IPaaS-pattern.md) |
-| Events vs Messages | Explanation the key differences between Events and Messages|[events-vs-messages](./patterns/event-driven-and-messaging-architecture) |
 | Point-to-point (P2P) pattern | Explanation of P2P with benefits and drawbacks|[P2P-pattern](./patterns/event-driven-and-messaging-architecture/point-to-point.md) |
 | Load Levelling pattern | Explanation of Load Levelling, which is some sort of P2P within a single application|[load-levelling-pattern](./patterns/event-driven-and-messaging-architecture/load-levelling.md) |
 | PUB/SUB pattern with Event Grid PUSH/PUSH| Explanation of PUB/SUB pattern with benefits and drawbacks when using Event Grid in PUSH/PUSH mode|[event-grid-push-push](./patterns/event-driven-and-messaging-architecture/pub-sub-event-grid.md) |

@@ -1,5 +1,5 @@
 # PUB/SUB with Azure Event Grid in PUSH/PULL Mode
-![pub-sub-eventgrid-pull](../images/pubsubeventgridpull.png)
+![pub-sub-eventgrid-pull](../../images/pubsubeventgridpull.png)
 
 The PUB/SUB pattern is popular in Event-Driven Architectures and Microservices. The producer of a message is agnostic of its subscriber(s). Each subscriber receives a copy of the original message sent by the topic. The above diagram and below attention points are applicable only to Event Grid in PUSH/PULL mode. To be clear, PUSH/PULL means that the sender **pushes** the event while the receiver **receives** it through a **pull** mechanism. In other words, the receiver polls Event Grid to check if new events were queued to the subscription. The main benefit of a PUSH/PULL approach with Event Grid is that you can isolate everything from internet at no extra cost.
 

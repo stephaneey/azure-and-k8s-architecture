@@ -1,6 +1,6 @@
 # PUB/SUB in PUSH/PUSH/PULL mode
 
-![pub-sub-push-push-pull](../images/pubsubpushpushpull.png)
+![pub-sub-push-push-pull](../../images/pubsubpushpushpull.png)
 
 Read the other PUB/SUB mechanisms if you want to know more about PUB/SUB.The above diagram illustrates two different approaches described below.
 

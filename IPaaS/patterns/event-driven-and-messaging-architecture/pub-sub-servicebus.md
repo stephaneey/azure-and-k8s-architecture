@@ -1,5 +1,5 @@
 # PUB/SUB with Azure Service Bus in PUSH/PULL
-![pub-sub-servicebus](../images/pubsubbus.png)
+![pub-sub-servicebus](../../images/pubsubbus.png)
 
 The PUB/SUB pattern is popular in Event-Driven Architectures and Microservices. The producer of a message is agnostic of its subscriber(s). Each subscriber receives a copy of the original message sent by the topic.The above diagram and below attention points are applicable only to Service Bus in PUSH/PULL mode. To be clear, PUSH/PULL means that the sender **pushes** the message to Service Bus, while the receiver **receives** it through a **pull** mechanism. In other words, the receiver initiates the call to Service Bus and polls it to see if new messages landed in the subscription.
 

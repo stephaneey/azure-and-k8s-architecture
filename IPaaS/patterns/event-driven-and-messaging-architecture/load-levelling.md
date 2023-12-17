@@ -1,5 +1,5 @@
 # Load Levelling Diagram
-![load-levelling](../images/loadlevelling.png)
+![load-levelling](../../images/loadlevelling.png)
 
 This pattern is a design pattern that's used to even out the processing load on a system. It helps manage and reduce the pressure on resources that are invoked by a high number of concurrent requests.
 

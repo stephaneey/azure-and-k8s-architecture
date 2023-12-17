@@ -1,5 +1,5 @@
 # Point-to-point (P2P) Diagram
-![point-to-point](../images/p2p.png)
+![point-to-point](../../images/p2p.png)
 
 This pattern is used when both the producer and the consumer of a message are tightly coupled. The producer is **not** agnostic from its consumer. 
 

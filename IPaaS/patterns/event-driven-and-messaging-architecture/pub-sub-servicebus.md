@@ -23,7 +23,7 @@ The center of gravity of your architecture is the message broker itself.
 
 ## Pros
 
-- Producers and subscribers are more decoupled
+- Producers and subscribers are decoupled
 - Subscribers can apply their own filters to only subscribe to what they are interested in.
 - Easy to isolate everything from Internet
 

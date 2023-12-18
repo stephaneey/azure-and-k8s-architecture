@@ -19,17 +19,17 @@ When using the push-based model, notified endpoints must be internet facing. Thi
 ## (4) Handlers can become a potential bottleneck
 Event Grid can take many events per second and will notify the subscribers right away. Make sure that your handlers are able to follow the pace in case of high load. To illustrate this further, you must make sure to choose an appropriate hosting option for your handlers. For example, while Azure Functions Elastic Premium is a very good fit, Azure Functions running on an External App Service Environmment might be a bottleneck, given the time taken by an ASE to scale out. The center of gravity of your architecture is the handling part.
 
-# Pros & Cons of Pub/Sub using Azure Service Bus
+# Pros & Cons of Pub/Sub using Azure Event Grid
 
 ## Pros
 
-- Producers and subscribers are more decoupled
+- Producers and subscribers are decoupled.
 - Subscribers can apply their own filters to only subscribe to what they are interested in.
 
 ## Cons
 
-- Higher costs if you isolate Azure Service Bus from Internet
-- Can lead to some troubleshooting and debugging complexity when PUB/SUB is used in a chain of events (ie: topic 1 ==> subscriber 1 ==> new topic ==> new subscriber)
+- As of 12/2023, Event Grid can only notify **internet facing endpoints**.
+- Can lead to some troubleshooting and debugging complexity when PUB/SUB is used in a chain of events (ie: topic 1 ==> subscriber 1 ==> new topic ==> new subscriber).
 
 # Real world observations
 

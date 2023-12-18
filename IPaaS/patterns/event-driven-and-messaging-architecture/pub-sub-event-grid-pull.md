@@ -14,7 +14,7 @@ In order to do PUSH/PULL with Event Grid, you must use the **Event Grid Namespac
 When using the pull-based model, handlers can dequeue events at their own pace. The center of gravity of your architecture is the Event Grid Namespace itself, as you should foresee its capacity to play a buffer role in case your handlers are down.
 
 ## (4) Private link for Event Grid Namespaces
-You can enable private link for your Event Grid Namespace and deny public traffic. Note that the private DNS that must be created should be <region>-1.privatelink.eventgrid.azure.net (the portal currently doesn't create the correct zone). The private IP corresponding to your namespace must be added to that zone and the zone must be linked to the virtual network(s) where resolution is required.
+You can enable private link for your Event Grid Namespace and deny public traffic. Note that the private DNS that must be created should be &lt;region>-1.privatelink.eventgrid.azure.net (the portal currently doesn't create the correct zone). The private IP corresponding to your namespace must be added to that zone and the zone must be linked to the virtual network(s) where resolution is required.
 
 # Pros & Cons of Pub/Sub using Event Grid Namespaces
 

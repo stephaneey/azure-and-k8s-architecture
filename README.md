@@ -15,5 +15,5 @@ Each folder has purpose-built diagrams along with markdown files that highlights
 | 2023/12/08 | Added a page with a few API Management topologies. |[Azure API Management Topologies](https://github.com/stephaneey/azure-and-k8s-architecture/tree/main/IPaaS/api%20management/topologies.md) |
 | 2023/12/09 | Added a page showing a Biztalk-like IPaaS approach. |[Biztalk-like IPaaS approach](https://github.com/stephaneey/azure-and-k8s-architecture/tree/main/IPaaS/patterns/biztalk-like-IPaaS-pattern.md) |
 | 2023/12/17 | Simple Event Processing & basic messaging. In this section, I describe patterns such as point-to-point, pub/sub and the diffent architecture options in Azure, such as push/push, push/pull and even push/push/pull.|[simple-event-processing](https://github.com/stephaneey/azure-and-k8s-architecture/tree/main/IPaaS/patterns/event-driven-and-messaging-architecture) |
-| 2023/12/31 | The Azure Autoscaling Cheat Sheet |[autoscaling-cheat-sheet](./cheat%20sheets/images/autoscaling.png) |
-| 2024/01/07 | The Azure Resilience Cheat Sheet for web apps and APIs. |[resilience-sheet](./cheat%20sheets/images/resilience.png) |
+| 2023/12/31 | The Azure Autoscaling Cheat Sheet |[autoscaling-cheat-sheet](./cheat%20sheets/images/autoscaling.md) |
+| 2024/01/07 | The Azure Resilience Cheat Sheet for web apps and APIs. |[resilience-sheet](./cheat%20sheets/images/resilience.md) |

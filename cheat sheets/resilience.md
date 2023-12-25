@@ -75,6 +75,7 @@ So, for our services, we have:
   - Front Door + External Facing APIM. It can be VNET integrated with *External* mode. In 01/2024, Front Door is not able to take a fully private APIM as an origin. We could expect Front Door to be able to register private endpoints for APIM, but this is not available yet. Moreover, the premium tier of APIM does not allow the creation of private endpoints if it's already VNET integrated...
   - When APIM is external facing, it has its own built-in Traffic Manager instance ensuring the load balancing across regional gateway units.
   - We typically restrict traffic to Front Door using APIM policies that check the presence of a specific HTTP request header that is set by Front Door itself and holds the unique identifier of the Front Door instance.
+  - If APIM is VNET integrated in internal mode, you'll need Application Gateway in between. For a pure internal scenario, Azure does not provide any global load balancer that can load balance *internal-only* traffic across regions, so you have to do that on your own.
 
 > Note that there is one technical alternative if you want to keep your APIM gateway fully private and still use Front Door as the fronting WAF. You can host a self-hosted gateway within AKS. However, you still need to pay for the primary default unit and it slightgly complexify the architecture. 
 

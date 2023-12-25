@@ -3,6 +3,8 @@
 # Cheat Sheet 
 > DISCLAIMER: I'll try to keep this up to date but the Cloud is a moving target so there might be gaps by the time you look at this cheat sheet! Always double-check if what is depicted in the cheat sheet still reflects the current situation. I discarded the Cross-Region (Global) Load Balancer for multi-region load balancing since it is not especially suited for HTTP traffic (layer-7). I kept Traffic Manager because it was the only option back in the days.
 
+Tip: right click on the image and choose *Open image in a new tab*.
+
 ![resilience](./images/resilience.png)
 
 # Attention Points

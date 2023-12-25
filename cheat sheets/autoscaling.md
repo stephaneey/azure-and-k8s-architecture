@@ -6,7 +6,7 @@ Before diving into the contents, let me recap some basics about scaling.
  
 # Cheat Sheet 
 
-> DISCLAIMER: I only took into account the **most** frequently used services, not the entire Azure service catalog.
+> DISCLAIMER: I'll try to keep this up to date but the Cloud is a moving target so there might be gaps by the time you look at this cheat sheet! Always double-check if what is depicted in the cheat sheet still reflects the current situation. I only took into account the **most** frequently used services, not the entire Azure service catalog.
 
 ![autoscaling-azure-compute](./images/autoscaling.png)
 
@@ -16,7 +16,7 @@ Before diving into the contents, let me recap some basics about scaling.
 
 These three services can be hosted on the same underlying compute resource, namely an *App Service Plan*. These types of plans support *Custom Autoscaling*, which is based on time-based or metric-based autoscaling, where the rules can be defined by the Cloud consumer.
 
-Both Azure Functions and Logic Apps also support the *Consumption Tier*, which is serverless. This tier scales automatically according to the actual demand. However, a major downside of the Consumption tier is that it cannot access non-internet facing resources, since it does not integrate with Virtual Networks. That's why App Service Plans are often preferred over pure Consumption. For Azure Functions, you can use the *Elastic Premium* tier, which has all the benefits of Consumption (fast scaling, cost-friendly) without the downsides.  
+Both Azure Functions and Logic Apps also support the *Consumption Tier*, which is serverless. This tier scales automatically according to the actual demand. However, a major downside of the Consumption tier is that it cannot access non-internet facing resources, since it does not integrate with Virtual Networks. That's why App Service Plans are often preferred over pure Consumption. For Azure Functions, you can use the *Elastic Premium* tier, which has all the benefits of Consumption (fast scaling, cost-friendly) without the downsides.  Whatever type of App Service Plan you opt for, you should pay attention to the **Application Density** in case you share a plan across multiple business applications. Azure App Service's default way of scaling out, is by replicating **every application** onto the underlying worker nodes. At a certain point in time, this might not help to scale out anymore as the shared compute might not be able to accommodate enough CPU/Memory for all the apps. Note that it is technically possible to perform per-app scale out, but I do not recommend it, because of the complexity it introduces.
 
 ## (2) Azure Kubernetes Service and Container Apps
 

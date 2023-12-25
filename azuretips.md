@@ -33,3 +33,5 @@ In this page, I will regroup a few tips per type of service or area.
 - Use **DNS Private Resolver** to ensure DNS resolution from on-premises to the Cloud and vice-versa.
 - Pay attention to **Private Link** when you have a multi-tenant organization or if your organization merges with another one. Private Link has a single domain per PaaS service that **cannot** be changed. Try to anticipate on the multi-tenant scenario from the ground up.
 - Use a **DNS Forwarding Ruleset** with a wildcard if you need to send public domains to SaaS solutions such as CloudFlare.
+- Did you know that you should **never try to use <service>.privatelink.xxx** but always the public DNS name when talking to a private-link-enabled service? This is because of the certificate validation that expects the FQDN to match the public name.
+- Did you know that you can register a custom domain for private-link-enabled App Services using **Public DNS**? It sounds counterintuitive and even odd but you'll need to create a TXT record in your public DNS for domain validation purposes. Then, you can simply add a CNAME record in your private DNS (on-premises or in a Private DNS Zone).

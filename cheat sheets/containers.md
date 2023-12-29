@@ -40,7 +40,7 @@ Over the months, ACA added extra hosting capabilities on the form of *Workload P
 
 ACA still shines the most for Microservices, APIs in general, web apps and jobs, but with the addition of workload profiles, it can handle more compute intensive workloads as well.
 ## (5) Azure Functions
-Azure Functions have been there for quite a while. They are the ideal service to build Event-Driven Architectures, thanks to their numerous triggers and bindings. Functions can be containerized and hosted on App Service Plans, as well as in any container system. Microsoft made it easier to also host functions on Azure Container Apps, by letting you specify a Container App Environment as the target hosting platform. Azure Functions natively supports Dapr, which is also integrated in Container Apps, hence the great match.
+Azure Functions have been there for quite a while. They are the ideal service to build Event-Driven Architectures, thanks to their numerous triggers and bindings. Functions can be containerized and hosted on App Service Plans, as well as in any container system. Microsoft made it easier to also host functions on Azure Container Apps, by letting you specify a Container App Environment as the target hosting platform. Azure Functions natively support Dapr, which is also integrated in Container Apps, hence the great match.
 
 ## (6) Azure Container Instances also known as ACI and Container Groups
 

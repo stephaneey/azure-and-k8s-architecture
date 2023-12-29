@@ -1,17 +1,17 @@
-# Resilience with for web applications and API hosting
+# Availability for web applications and API hosting
 
 # Cheat Sheet 
 > DISCLAIMER: I'll try to keep this up to date but the Cloud is a moving target so there might be gaps by the time you look at this cheat sheet! Always double-check if what is depicted in the cheat sheet still reflects the current situation. I discarded the Cross-Region (Global) Load Balancer for multi-region load balancing since it is not especially suited for HTTP traffic (layer-7). I kept Traffic Manager because it was the only option back in the days.
 
 Tip: right click on the image and choose *Open image in a new tab*.
 
-![resilience](./images/resilience.png)
+![availability](./images/availability.png)
 
 # Attention Points
 
 ## (1) Instance-level outage
 
-The first level of resilience is the number of instances you run in parallel. Even if you do not leverage any other high-availability mechanism, it's always safer to run at least two instances of a given service, should one instance crash.
+The first level of availability is the number of instances you run in parallel. Even if you do not leverage any other high-availability mechanism, it's always safer to run at least two instances of a given service, should one instance crash.
 With *App Service Plans*, you simply have to define the number of instances you are willing to pay for. With both *AKS* and *Container Apps*, the number of instances is specified via the *replicas* attribute. With *Container Instances*, you must provision **multiple** instances yourself and make sure to ensure a proper load balancing. 
 
 *API Management* let's you choose the number of gateway units you want to run.

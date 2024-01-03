@@ -46,7 +46,7 @@ Let us assume that we are talking about public facing apps. Both Traffic Manager
 
 Clarification made, multi-region workloads often imply:
 
-- A front door with or without application gateway as an origin. You can bypass Application Gateway for any origin that can be linked through *Private Link Service*. This works fine with AKS and Container Apps. Today, if you want to keep your actual backend hosting platform fully private (ie: ILB ASE, ILB APIM), you'll need to put an Application Gateway between Front Door and your backend, because Front Door does not integrage yet (in 01/24) natively with such private backends.
+- A front door with or without application gateway as an origin. You can bypass Application Gateway for any origin that can be linked through *Private Link Service*. This works fine with AKS and Container Apps. Today, if you want to keep your actual backend hosting platform fully private (ie: ILB APIM), you'll need to put an Application Gateway between Front Door and your backend, because Front Door does not integrage yet (in 01/24) natively with such private backends.
 
 - A backend hosting platform in each region. 
 - An explicit instantiation of Private Link Service when Front Door takes private origins or directly through private endpoints when applicable (ie: App Service).
@@ -56,6 +56,7 @@ So, for our services, we have:
 
 - For App Services:
   - Front Door Standard or Premium + External ASE (because not possible with ILB ASE in 01/2024) in each region.
+  - Front Door Premium + ILB ASE **with Private Endpoint enabled** by explicitly enabling them (*--allow-new-private-endpoint-connections*). Still the ILB won't be visible to Front Door but you can let Front Door deploy private endpoints for the web apps hosted on the ASE.
   - Front Door Premium + Multi-tenant App Service Plans + Front Door registered Private Endpoints + VNET Injection for outbound traffic. 
 
 - For AKS:

@@ -3,6 +3,6 @@ This page is there to help you make the right choices when deploying new cluster
  
 # Cheat Sheet for Networking, Identity and Service Meshes
 
-> DISCLAIMER: I'll try to keep this up to date but the Cloud is a moving target so there might be gaps by the time you look at this cheat sheet! Always double-check if what is depicted in the cheat sheet still reflects the current situation. I only took into account the **most** frequently used services, not the entire Azure service catalog.
+> DISCLAIMER: I'll try to keep this up to date but the Cloud is a moving target so there might be gaps by the time you look at this cheat sheet! Always double-check if what is depicted in the cheat sheet still reflects the current situation.
 
 ![aks-networking-identity-meshes](./images/aks-identity-network-meshes.png)

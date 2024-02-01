@@ -17,3 +17,4 @@ Each folder has purpose-built diagrams along with markdown files that highlights
 | 2023/12/17 | Simple Event Processing & basic messaging. In this section, I describe patterns such as point-to-point, pub/sub and the diffent architecture options in Azure, such as push/push, push/pull and even push/push/pull.|[simple-event-processing](https://github.com/stephaneey/azure-and-k8s-architecture/tree/main/IPaaS/patterns/event-driven-and-messaging-architecture) |
 | 2023/12/31 | The Azure Autoscaling Cheat Sheet |[autoscaling-cheat-sheet](./cheat%20sheets/autoscaling.md) |
 | 2024/01/07 | The Azure Availability Cheat Sheet for web apps and APIs. |[availability-sheet](./cheat%20sheets/availability.md) |
+| 2024/01/26 | The Azure Containerization Cheat Sheet. |[containers-sheet](./cheat%20sheets/containers.md) |

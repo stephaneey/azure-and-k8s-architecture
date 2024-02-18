@@ -18,3 +18,6 @@ Each folder has purpose-built diagrams along with markdown files that highlights
 | 2023/12/31 | The Azure Autoscaling Cheat Sheet |[autoscaling-cheat-sheet](./cheat%20sheets/autoscaling.md) |
 | 2024/01/07 | The Azure Availability Cheat Sheet for web apps and APIs. |[availability-sheet](./cheat%20sheets/availability.md) |
 | 2024/01/26 | The Azure Containerization Cheat Sheet. |[containers-sheet](./cheat%20sheets/containers.md) |
+| 2024/02/02 | Cheat Sheet for Networking, Identity and Service Meshes. |[aks-cheat-cheet](./cheat%20sheets/aks.md) |
+| 2024/02/18 | The Azure API Management Architecture Map. |[apim-map](./maps/apim.md) |
+

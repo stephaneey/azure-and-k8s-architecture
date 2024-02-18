@@ -3,7 +3,7 @@
 > DISCLAIMER: I'll try to keep this up to date but the Cloud is a moving target so there might be gaps by the time you look at this map! Always double-check if what is depicted in the map still reflects the current situation. 
 
 ## Introduction
-Note: here is a pointer to the [original map](https://app.mindmapmaker.org/#m:mm186ab02cb471425e9d4139f3925fa677) is available online
+Note: here is a pointer to the [original map](https://app.mindmapmaker.org/#m:mm7f3b74a678044627b2c5ddf178e07d41) is available online
 
 ![apimanagementmap](./images/apim.png)
 
@@ -58,5 +58,5 @@ You can enable *Defender for API* to have an end-to-end assessment of your APIs.
 *OAuth* and *OIDC* have become mainstream. The type of flow you can use vary according to the type of client consumer. Any mobile, browser-based and other *native* clients should only leverage interactive flows such as the *PKCE* one. Any server-side component (ie: backend calling another backend, background job, etc.) can leverage the *Client Credentials Grant* as well as the *Resource Owner Password Grant*, although the latter is considered weak. Beyond OAuth and OIDC, server-side components can use *Subscription keys*, while this method is strictly not recommended for client devices. Both, client and server-side consumers can leverage mTLS.
 
 ## Online MindMap Maker tool
-The [original map](https://app.mindmapmaker.org/#m:mm186ab02cb471425e9d4139f3925fa677) is available online. Since this free online tool archives every map that is older than a year, here is a direct link to the corresponding [JSON file](./apim.json), which you can reimport in the online tool should the map not be available anymore.
+The [original map](https://app.mindmapmaker.org/#m:mm7f3b74a678044627b2c5ddf178e07d41) is available online. Since this free online tool archives every map that is older than a year, here is a direct link to the corresponding [JSON file](./apim.json), which you can reimport in the online tool should the map not be available anymore.
 

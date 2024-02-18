@@ -3,6 +3,8 @@
 > DISCLAIMER: I'll try to keep this up to date but the Cloud is a moving target so there might be gaps by the time you look at this map! Always double-check if what is depicted in the map still reflects the current situation. 
 
 ## Introduction
+Note: here is a pointer to the [original map](https://app.mindmapmaker.org/#m:mm186ab02cb471425e9d4139f3925fa677) is available online
+
 ![apimanagementmap](./images/apim.png)
 
 Azure API Management (APIM) has become a broad service with many features and there are many things to think about when dealing with the service. The purpose of this map is to be a one stop shop to assess the different options about Securing, Monitoring, Designing, Scaling, Publishing and Developing APIs. Items marked with an asterisk (*) are/were in preview at the time the map was first published.

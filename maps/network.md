@@ -3,7 +3,7 @@
 > DISCLAIMER: I'll try to keep this up to date but the Cloud is a moving target so there might be gaps by the time you look at this map! Always double-check if what is depicted in the map still reflects the current situation. 
 
 ## Introduction
-Note: here is a pointer to the [original map](https://app.mindmapmaker.org/#m:mma6909a961d384a8b8a835587d479df24) is available online
+Note: here is a pointer to the [original map](https://app.mindmapmaker.org/#m:mma6909a961d384a8b8a835587d479df24).
 
 ![networkingmap](./images/network.png)
 

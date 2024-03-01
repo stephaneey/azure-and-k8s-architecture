@@ -3,7 +3,7 @@
 > DISCLAIMER: I'll try to keep this up to date but the Cloud is a moving target so there might be gaps by the time you look at this map! Always double-check if what is depicted in the map still reflects the current situation. 
 
 ## Introduction
-Note: here is a pointer to the [original map](https://app.mindmapmaker.org/#m:mm874d2549d9ee49cb83b34043b5a95dab) is available online
+Note: here is a pointer to the [original map](https://app.mindmapmaker.org/#m:mm874d2549d9ee49cb83b34043b5a95dab).
 
 ![oidcmap](./images/oidc.png)
 OpenID Connect (OIDC) is in the air for quite a while. I am still impressed by the lack of knowledge of most developers and security pros in that matter. The purpose of this map is to highlight the main OIDC areas and its vocabulary.

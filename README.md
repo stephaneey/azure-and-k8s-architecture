@@ -20,4 +20,7 @@ Each folder has purpose-built diagrams along with markdown files that highlights
 | 2024/01/26 | The Azure Containerization Cheat Sheet. |[containers-sheet](./cheat%20sheets/containers.md) |
 | 2024/02/02 | Cheat Sheet for Networking, Identity and Service Meshes. |[aks-cheat-cheet](./cheat%20sheets/aks.md) |
 | 2024/02/18 | The Azure API Management Architecture Map. |[apim-map](./maps/apim.md) |
+| 2024/02/18 | The Azure Network Architecture Map. |[networking-map](./maps/network.md) |
+| 2024/02/18 | The OpenID Connect Map. |[networking-map](./maps/oidc.md) |
+| 2024/02/18 | The Istio Map. |[istio-map](./maps/istio.md) |
 

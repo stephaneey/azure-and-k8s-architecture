@@ -37,4 +37,3 @@ A few typical network concerns.
 
 ## Online MindMap Maker tool
 The [original map](https://app.mindmapmaker.org/#m:mma6909a961d384a8b8a835587d479df24) is available online. Since this free online tool archives every map that is older than a year, here is a direct link to the corresponding [JSON file](./network.json), which you can reimport in the online tool should the map not be available anymore.
-

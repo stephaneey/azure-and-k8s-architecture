@@ -31,7 +31,7 @@ Unlike *Value Tokens*, *Opaque Tokens* are not self-sufficient. The resource ser
 Endpoints are API endpoints exposed by the Identity Provider and called by clients to initiate OIDC flows. They vary according to the IDP capabilities. 
 #### Attention Points
 ##### Unavailable endpoints in Entra ID
-Introspection (used among other things together with Reference Tokens) and Revocation (used to revoke existing tokens) endpoints are not available in Entra ID. While Entra does not provide a revocation endpoint, it is yet possible to revoke refresh tokens by resetting the user password or disabling it.
+Introspection (used among other things together with Reference Tokens) and Revocation (used to revoke existing tokens) endpoints are not available in Entra ID. While Entra does not provide a revocation endpoint, it is yet possible to revoke refresh tokens by resetting the user password or disabling it, as well as explicitly revoke all user sessions. 
 ### Authorization
 As you can imagine, the ultimate purpose of acquiring access tokens is to be authorized to consume resources. It is up to the resource server to validate whether the provided access token is valid or not and whether the intended operation is allowed or not. You can typically rely on two methods:
 - RBAC: Role-based Access Control is achieved by inserting role names into the *role* claim. In Entra ID, you can easily get roles injected when using *User and Group Assignment* and mapping security groups to application roles. 

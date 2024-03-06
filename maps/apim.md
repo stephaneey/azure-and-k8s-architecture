@@ -3,7 +3,7 @@
 > DISCLAIMER: I'll try to keep this up to date but the Cloud is a moving target so there might be gaps by the time you look at this map! Always double-check if what is depicted in the map still reflects the current situation. 
 
 ## Introduction
-Note: here is a pointer to the [original map](https://app.mindmapmaker.org/#m:mmc928f90ef4614b7c91bdf9e68db7954a).
+Note: here is a pointer to the [original map](https://app.mindmapmaker.org/#m:mma5d8ebf1484f4722b9e017ccf2ba4fc6).
 
 ![apimanagementmap](./images/apim.png)
 
@@ -61,5 +61,5 @@ You can enable *Defender for API* to have an end-to-end assessment of your APIs.
 APIM lets you develop gRPC, GraphSQL, REST, SOAP and OData APIs...and *Visual Studio Code* is definitely your best friend to do so. With its *Azure API Management* extension, it enables live debugging of APIM policies, among other things. When using Postman, Fiddler or similar tools, you can add the *Ocp-Apim-Trace* HTTP request header to get a full trace of the API call (tracing must be enabled up front). You can enforce nearly any action/validation/routing logic through the use of policies, including even C# expressions. Just keep in mind that you should avoid defining any business logic in policies.  
 
 ## Online MindMap Maker tool
-The [original map](https://app.mindmapmaker.org/#m:mmc928f90ef4614b7c91bdf9e68db7954a) is available online. Since this free online tool archives every map that is older than a year, here is a direct link to the corresponding [JSON file](./apim.json), which you can reimport in the online tool should the map not be available anymore.
+The [original map](https://app.mindmapmaker.org/#m:mma5d8ebf1484f4722b9e017ccf2ba4fc6) is available online. Since this free online tool archives every map that is older than a year, here is a direct link to the corresponding [JSON file](./apim.json), which you can reimport in the online tool should the map not be available anymore.
 

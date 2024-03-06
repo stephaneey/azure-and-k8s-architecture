@@ -55,7 +55,22 @@ APIM has many different policies but some are first-class citizens when it comes
 You can enable *Defender for API* to have an end-to-end assessment of your APIs. Defender will check whether endpoints are subject to authentication and help you caterogize them. It also ships with a live threat detection module that can raise alerts in case of anomaly detection (unsual bandwidth usage), or any of the OWASP API top 10 threats. I would still recommend to put a Web Application Firewall (WAF) in front of APIM for internet facing APIs.
 
 ##### Authorizations based on the consumer
-*OAuth* and *OIDC* have become mainstream. The type of flow you can use vary according to the type of client consumer. Any mobile, browser-based and other *native* clients should only leverage interactive flows such as the *PKCE* one. Any server-side component (ie: backend calling another backend, background job, etc.) can leverage the *Client Credentials Grant* as well as the *Resource Owner Password Grant*, although the latter is considered weak. Beyond OAuth and OIDC, server-side components can use *Subscription keys*, while this method is strictly not recommended for client devices. Both, client and server-side consumers can leverage mTLS.
+*OAuth* and *OIDC* have become mainstream. The type of flow you can use vary according to the type of client consumer. Any mobile, browser-based and other *native* clients should only leverage interactive flows such as the *PKCE* one. Any server-side component (ie: backend calling another backend, background job, etc.) can leverage the *Client Credentials Grant* as well as the *Resource Owner Password Grant*, although the latter is considered weak. Note that the so-called *Certificate Bound Access Token* is the most secure form of *Client Credentials* but is not supported by Entra ID. This flow may look similar to the *Client Assertion* one but is different. 
+
+The Client Assertion flow consists of the following steps and is supported by Entra:
+- Register a client application in Entra and upload a client certicate instead of creating a client secret
+- The component using the client app must sign its access token request using the client certificate
+- The component using the client app must include the generated JWT token as part of its token request using the *client_assertion* query string.
+- Entra validates the request and returns an access token accordingly. The returned token is **NOT** bound to the certificate.
+
+The Certificate Bound Access Token flow consists of the following steps and is **NOT** supported by Entra:
+- Register a client app in the IDP together with a client certificate
+- The component using the client app must authenticate against the IDP using the client cert through mTLS and perfor its token request
+- The IDP verifies the provided certificate, generate an access token that includes a reference to the cert (typically thumbprint)
+- The component using the cient app consumes the resource by passing the access token over an mTLS connection. 
+- The resource server validates both the access token and the client certificate while ensuring that the provided cert corresponds to the one included in the token.
+
+Beyond OAuth and OIDC, server-side components can use *Subscription keys*, while this method is strictly not recommended for client devices. Both, client and server-side consumers can leverage mTLS.
 
 ### Developing with APIM
 APIM lets you develop gRPC, GraphSQL, REST, SOAP and OData APIs...and *Visual Studio Code* is definitely your best friend to do so. With its *Azure API Management* extension, it enables live debugging of APIM policies, among other things. When using Postman, Fiddler or similar tools, you can add the *Ocp-Apim-Trace* HTTP request header to get a full trace of the API call (tracing must be enabled up front). You can enforce nearly any action/validation/routing logic through the use of policies, including even C# expressions. Just keep in mind that you should avoid defining any business logic in policies.  

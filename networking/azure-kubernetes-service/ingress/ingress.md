@@ -63,8 +63,37 @@ Here are the pros & cons of such an approach.
 
 Here again, you should make sure to have replicas running in different availability zones.
 
-## One ingress controller per domain
+## One external and internal ingress controller per domain
+In large clusters, you might want to regroup applications per domain and let domain owners a certain flexiblity when it comes to managing ingress traffic. 
+![Domain-Split](ic-domain-split.png)
+Here are the pros & cons of such an approach.
+
+**Pros**
+- Clear segregation between internet and internal channels and across application domains.
+- Domain owners will not interfere with other domains since they have their own dedicated ingress controller.
+- Dedicated Network Security Group per type of traffic per domain.
+
+**Cons**
+- Can be resource intensive if many domains are part of the same cluster.
+- If you isolate (not mandatory) dedicated ingress controllers in their own subnet, you will burn many IPs (5 Azure-reserved IP per subnet).
+
+Of course, you would only deploy a dedicated ingress controller per domain and traffic type if exposure outside of the cluster, internet or not, is required.
+
+## One external and internal ingress controller per application
+![Application-Split](ic-app-split.png)
+Here are the pros & cons of such an approach.
+
+**Pros**
+- Clear segregation between internet and internal channels and across application domains.
+- Domain owners will not interfere with other domains since they have their own dedicated ingress controller.
+- Dedicated Network Security Group per type of traffic per domain.
+
+**Cons**
+- Can be resource intensive if many applications are part of the same cluster.
+- If you isolate (not mandatory) dedicated ingress controllers in their own subnet, you will burn many IPs (5 Azure-reserved IP per subnet).
+
+Of course, you would only deploy a dedicated ingress controller per application and traffic type if exposure outside of the cluster, internet or not, is required.
 
 
-## One ingress controller per application
-
+# Summary
+The Cloud native way of managing ingress traffic typically involves using one or more ingress controllers. Enterprise-grade security often requires a full isolation from Internet in order to tunnel all Internet incoming traffic to a Web Application Firewall. This typically means that you should in practice not use a service of type *LoadBalancer* with a public IP address attached to it. The number of ingress controllers varies according to whether you use shared clusters or not, the extent to which you delegate ingress management to your application teams and the security requirements you must comply to.

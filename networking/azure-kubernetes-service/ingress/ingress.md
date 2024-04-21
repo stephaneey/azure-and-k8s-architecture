@@ -19,7 +19,7 @@ To mark a Load Balancer internal, you must use the following annotations:
   service.beta.kubernetes.io/azure-load-balancer-internal-subnet: <subnet>
 ```
 
-where <subnet> lets you choose the target subnet in which you want the particular IP to be deployed. 
+where *subnet* lets you choose the target subnet in which you want the particular IP to be deployed. 
 
 # Ingress controllers 
 
@@ -31,17 +31,18 @@ There are many moving parts (as always), but there are three ways to deploy Isti
 - Using Helm  
 - Using IstioCtl
 
-I'll let you check your prefered option [here](https://istio.io/latest/docs/setup/install/operator/).
+I'll let you check your preferred option [here](https://istio.io/latest/docs/setup/install/operator/).
 
 ## One ingress controller for everything
 ![No-split](ic-no-split.png)
 
-In the above topology, you share a single ingress controller for whatever type of traffic you are dealing with. Yet, I would encourage you to use a dedicated subnet and node pool to clearly segregate the ingress function from the rest of the cluster. Here are the pros & cons of such an approach.
+In the above topology, you share a single ingress controller for whatever type of traffic you are dealing with and for all the apps. Yet, I would encourage you to use a dedicated subnet and node pool to clearly segregate the ingress function from the rest of the cluster. Here are the pros & cons of such an approach.
 
 **Pros**
 - Compute friendly because there is no overhead
+
 **Cons**
-- Can be challenging to delegate work to application teams since they will all target the same gateway overall.
+- Can be challenging to delegate ingress managament to application teams since they will all target the same gateway overall.
 - No clear path between internet facing and internal facing applications
 - Single point of failure
 
@@ -50,6 +51,20 @@ If you adopt such a topology, make sure to increase the number of replicas and u
 ## One ingress controller for internal traffic and one for external traffic
 With AKS, we can enable the *Azure Mesh*, which leverages Istio behind the scenes and one of the supported topology is to enable two ingress channels, one for internal-only traffic and one for external traffic. However, the external ingress controller is associated with a public IP attached to the default external load balancer, which is not ideal as we typically prefer to have everything private and consolidate public endpoints through Web Application Firewalls or firewalls should you deal with non-HTTP traffic. 
 ![Split-External-Internal](ic-split-int-ext.png)
+
+Here are the pros & cons of such an approach.
+
+**Pros**
+- Clear segregation between internet and internal channels, which is easier to manage at scale and gives a better visibility.
+- Dedicated Network Security Group per channel
+
+**Cons**
+- Can be challenging to delegate ingress managament to application teams since they will all target the same gateway (iternal or external) overall.
+
+Here again, you should make sure to have replicas running in different availability zones.
+
 ## One ingress controller per domain
+
+
 ## One ingress controller per application
 

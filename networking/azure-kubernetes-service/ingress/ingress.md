@@ -26,7 +26,7 @@ where <subnet> lets you choose the target subnet in which you want the particula
 I already shed some light on the different options in the [Cluster Ingress section of the AKS Cheat Sheet](https://github.com/stephaneey/azure-and-k8s-architecture/blob/main/cheat%20sheets/aks.md). I will depict below a possible approach using Istio Ingress. Note that the overall principles should work just as fine with other ingress controllers such as NGINX, etc.
 
 # Ingress topologies - Istio as an example
-There are many moving parts (as always), but there are three ways to deploy Istion ingress controllers:
+There are many moving parts (as always), but there are three ways to deploy Istio ingress controllers:
 - Using the IstioOperator but this one seems to be on the deprecation path although no clear communication has been made as of 03/2024
 - Using Helm  
 - Using IstioCtl
@@ -34,7 +34,7 @@ There are many moving parts (as always), but there are three ways to deploy Isti
 I'll let you check your prefered option [here](https://istio.io/latest/docs/setup/install/operator/).
 
 ## One ingress controller for everything
-![No-split](ic-nosplit.png)
+![No-split](ic-no-split.png)
 
 In the above topology, you share a single ingress controller for whatever type of traffic you are dealing with. Yet, I would encourage you to use a dedicated subnet and node pool to clearly segregate the ingress function from the rest of the cluster. Here are the pros & cons of such an approach.
 

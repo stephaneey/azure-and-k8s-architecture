@@ -16,7 +16,8 @@ To mark a Load Balancer internal, you must use the following annotations:
 
 ```serviceAnnotations:
   service.beta.kubernetes.io/azure-load-balancer-internal: "true"
-  service.beta.kubernetes.io/azure-load-balancer-internal-subnet: <subnet>```
+  service.beta.kubernetes.io/azure-load-balancer-internal-subnet: <subnet>
+```
 
 where <subnet> lets you choose the target subnet in which you want the particular IP to be deployed. 
 

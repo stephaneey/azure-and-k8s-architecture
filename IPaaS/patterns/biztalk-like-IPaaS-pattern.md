@@ -2,7 +2,7 @@
 # Diagram
 ![apim-topologies](../images/biztalk-like-IPaaS-pattern.png)
 
-The purpose of such an approach is to mimic Biztalk, which was heavily used on-premises. Biztalk acted as a true integration platform to rule and handle inter-application communication in a centralized way.
+The purpose of such an approach is to mimic BizTalk, which was heavily used on-premises. BizTalk acted as a true integration platform to rule and handle inter-application communication in a centralized way.
 
 # Attention Points
 ## (1) Sending application
@@ -28,7 +28,7 @@ Once the initial message/command was handled by the orchestration, the outcome c
 ## (6) Target application
 The target appliation still validates that the received message is sent by an authorized party. You can restrict by letting APIM authenticate against the app using its managed identity. Note that more than one tokens can be added to the request payload.
 
-# Pros & Cons of using a Biztalk-like approach using IPaaS 
+# Pros & Cons of using a BizTalk-like approach using IPaaS 
 
 ## Pros
 - Enforce standards (interfaces, conventions, security, etc.) for integrations between applications
@@ -49,7 +49,7 @@ This type of integration requires a central integration team, which conflicts wi
 
 | Diagram | Description |Link
 | ----------- | ----------- | ----------- |
-| Biztalk-like IPaaS | This diagram shows how to leverage IPaaS to have a Bitalk-like experience, along with the pros & cons of such an approach|[Biztalk-like-IPaaS](biztalk-like-IPaaS-pattern.md) |
+| BizTalk-like IPaaS | This diagram shows how to leverage IPaaS to have a Bitalk-like experience, along with the pros & cons of such an approach|[BizTalk-like-IPaaS](biztalk-like-IPaaS-pattern.md) |
 | Point-to-point (P2P) pattern | Explanation of P2P with benefits and drawbacks|[P2P-pattern](./event-driven-and-messaging-architecture/point-to-point.md) |
 | Load Levelling pattern | Explanation of Load Levelling, which is some sort of P2P within a single application|[load-levelling-pattern](./event-driven-and-messaging-architecture/load-levelling.md) |
 | PUB/SUB pattern with Event Grid PUSH/PUSH| Explanation of PUB/SUB pattern with benefits and drawbacks when using Event Grid in PUSH/PUSH mode|[event-grid-push-push](./event-driven-and-messaging-architecture/pub-sub-event-grid.md) |

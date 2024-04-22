@@ -17,7 +17,7 @@ On top, these patterns often rely on orchestrations or choreographies.
 
 | Diagram | Description |Link
 | ----------- | ----------- | ----------- |
-| Biztalk-like IPaaS | This diagram shows how to leverage IPaaS to have a Bitalk-like experience, along with the pros & cons of such an approach|[Biztalk-like-IPaaS](./patterns/biztalk-like-IPaaS-pattern.md) |
+| BizTalk-like IPaaS | This diagram shows how to leverage IPaaS to have a Bitalk-like experience, along with the pros & cons of such an approach|[BizTalk-like-IPaaS](./patterns/biztalk-like-IPaaS-pattern.md) |
 | Events vs Messages | Explanation the key differences between Events and Messages|[events-vs-messages](./patterns/event-driven-and-messaging-architecture) |
 | Point-to-point (P2P) pattern | Explanation of P2P with benefits and drawbacks|[P2P-pattern](./patterns/event-driven-and-messaging-architecture/point-to-point.md) |
 | Load Levelling pattern | Explanation of Load Levelling, which is some sort of P2P within a single application|[load-levelling-pattern](./patterns/event-driven-and-messaging-architecture/load-levelling.md) |

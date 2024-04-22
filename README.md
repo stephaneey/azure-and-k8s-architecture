@@ -18,7 +18,7 @@ Each folder has purpose-built diagrams along with markdown files that highlights
 | 2024/01/07 | The Azure Availability Cheat Sheet for web apps and APIs. | [availability-sheet](./cheat%20sheets/availability.md) |
 | 2023/12/31 | The Azure Autoscaling Cheat Sheet | [autoscaling-cheat-sheet](./cheat%20sheets/autoscaling.md) |
 | 2023/12/17 | Simple Event Processing & basic messaging. In this section, I describe patterns such as point-to-point, pub/sub and the different architecture options in Azure, such as push/push, push/pull and even push/push/pull. | [simple-event-processing](https://github.com/stephaneey/azure-and-k8s-architecture/tree/main/IPaaS/patterns/event-driven-and-messaging-architecture) |
-| 2023/12/09 | Added a page showing a Biztalk-like IPaaS approach. | [Biztalk-like IPaaS approach](https://github.com/stephaneey/azure-and-k8s-architecture/tree/main/IPaaS/patterns/biztalk-like-IPaaS-pattern.md) |
+| 2023/12/09 | Added a page showing a BizTalk-like IPaaS approach. | [BizTalk-like IPaaS approach](https://github.com/stephaneey/azure-and-k8s-architecture/tree/main/IPaaS/patterns/biztalk-like-IPaaS-pattern.md) |
 | 2023/12/08 | Added a page with a few API Management topologies. | [Azure API Management Topologies](https://github.com/stephaneey/azure-and-k8s-architecture/tree/main/IPaaS/api%20management/topologies.md) |
 | 2023/12/08 | Added a page with a Azure tips. | [Azure Tips](https://github.com/stephaneey/azure-and-k8s-architecture/tree/main/azuretips.md) |
 | 2023/12/04 | These diagrams help you understand how to handle East-West traffic in AKS. | [East-West within AKS](https://github.com/stephaneey/azure-and-k8s-architecture/tree/main/networking/azure-kubernetes-service/east-west-traffic) |

@@ -65,6 +65,7 @@ Here again, you should make sure to have replicas running in different availabil
 
 ## One external and internal ingress controller per domain
 In large clusters, you might want to regroup applications per domain and let domain owners a certain flexiblity when it comes to managing ingress traffic. 
+
 ![Domain-Split](ic-domain-split.png)
 Here are the pros & cons of such an approach.
 
@@ -80,6 +81,7 @@ Here are the pros & cons of such an approach.
 Of course, you would only deploy a dedicated ingress controller per domain and traffic type if exposure outside of the cluster, internet or not, is required.
 
 ## One external and internal ingress controller per application
+
 ![Application-Split](ic-app-split.png)
 Here are the pros & cons of such an approach.
 

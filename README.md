@@ -5,22 +5,22 @@ The purpose of this repo is to share some real-world inspired Azure and K8s arch
 
 Each folder has purpose-built diagrams along with markdown files that highlights the attention points and shed some light on the design choices.
 
-
-| Release date | Description |Link
+| Release date | Description | Link |
 | ----------- | ----------- | ----------- |
-| 2023/11/25 | These diagrams help you understand how to deploy a global API platform. |[Multi-region API deployment in two flavors](https://github.com/stephaneey/azure-and-k8s-architecture/tree/main/IPaaS/api%20management/multi-region-setup) |
-| 2023/12/04 | These diagrams help you understand how to handle East-West traffic in the traditional Azure Hub & Spoke as well as in Virtual WAN. |[East-West with Hub & Spoke and VWAN](https://github.com/stephaneey/azure-and-k8s-architecture/tree/main/networking/hub%20and%20spoke/east-west-traffic) |
-| 2023/12/04 | These diagrams help you understand how to handle East-West traffic in AKS. |[East-West within AKS](https://github.com/stephaneey/azure-and-k8s-architecture/tree/main/networking/azure-kubernetes-service/east-west-traffic) |
-| 2023/12/08 | Added a page with a Azure tips. |[Azure Tips](https://github.com/stephaneey/azure-and-k8s-architecture/tree/main/azuretips.md) |
-| 2023/12/08 | Added a page with a few API Management topologies. |[Azure API Management Topologies](https://github.com/stephaneey/azure-and-k8s-architecture/tree/main/IPaaS/api%20management/topologies.md) |
-| 2023/12/09 | Added a page showing a Biztalk-like IPaaS approach. |[Biztalk-like IPaaS approach](https://github.com/stephaneey/azure-and-k8s-architecture/tree/main/IPaaS/patterns/biztalk-like-IPaaS-pattern.md) |
-| 2023/12/17 | Simple Event Processing & basic messaging. In this section, I describe patterns such as point-to-point, pub/sub and the diffent architecture options in Azure, such as push/push, push/pull and even push/push/pull.|[simple-event-processing](https://github.com/stephaneey/azure-and-k8s-architecture/tree/main/IPaaS/patterns/event-driven-and-messaging-architecture) |
-| 2023/12/31 | The Azure Autoscaling Cheat Sheet |[autoscaling-cheat-sheet](./cheat%20sheets/autoscaling.md) |
-| 2024/01/07 | The Azure Availability Cheat Sheet for web apps and APIs. |[availability-sheet](./cheat%20sheets/availability.md) |
-| 2024/01/26 | The Azure Containerization Cheat Sheet. |[containers-sheet](./cheat%20sheets/containers.md) |
-| 2024/02/02 | Cheat Sheet for Networking, Identity and Service Meshes. |[aks-cheat-cheet](./cheat%20sheets/aks.md) |
-| 2024/02/18 | The Azure API Management Architecture Map. |[apim-map](./maps/apim.md) |
-| 2024/02/18 | The Azure Network Architecture Map. |[networking-map](./maps/network.md) |
-| 2024/02/18 | The OpenID Connect Map. |[networking-map](./maps/oidc.md) |
-| 2024/02/18 | The Istio Map. |[istio-map](./maps/istio.md) |
-
+| 2024/04/21 | Managing Ingress traffic with AKS. | [Ingress with AKS](https://github.com/stephaneey/azure-and-k8s-architecture/tree/main/networking/azure-kubernetes-service/ingress) |
+| 2024/04/21 | Managing Egress traffic with AKS. | [Egress with AKS](https://github.com/stephaneey/azure-and-k8s-architecture/tree/main/networking/azure-kubernetes-service/Egress) |
+| 2024/02/18 | The Istio Map. | [istio-map](./maps/istio.md) |
+| 2024/02/18 | The OpenID Connect Map. | [networking-map](./maps/oidc.md) |
+| 2024/02/18 | The Azure Network Architecture Map. | [networking-map](./maps/network.md) |
+| 2024/02/18 | The Azure API Management Architecture Map. | [apim-map](./maps/apim.md) |
+| 2024/02/02 | Cheat Sheet for Networking, Identity and Service Meshes. | [aks-cheat-cheet](./cheat%20sheets/aks.md) |
+| 2024/01/26 | The Azure Containerization Cheat Sheet. | [containers-sheet](./cheat%20sheets/containers.md) |
+| 2024/01/07 | The Azure Availability Cheat Sheet for web apps and APIs. | [availability-sheet](./cheat%20sheets/availability.md) |
+| 2023/12/31 | The Azure Autoscaling Cheat Sheet | [autoscaling-cheat-sheet](./cheat%20sheets/autoscaling.md) |
+| 2023/12/17 | Simple Event Processing & basic messaging. In this section, I describe patterns such as point-to-point, pub/sub and the different architecture options in Azure, such as push/push, push/pull and even push/push/pull. | [simple-event-processing](https://github.com/stephaneey/azure-and-k8s-architecture/tree/main/IPaaS/patterns/event-driven-and-messaging-architecture) |
+| 2023/12/09 | Added a page showing a Biztalk-like IPaaS approach. | [Biztalk-like IPaaS approach](https://github.com/stephaneey/azure-and-k8s-architecture/tree/main/IPaaS/patterns/biztalk-like-IPaaS-pattern.md) |
+| 2023/12/08 | Added a page with a few API Management topologies. | [Azure API Management Topologies](https://github.com/stephaneey/azure-and-k8s-architecture/tree/main/IPaaS/api%20management/topologies.md) |
+| 2023/12/08 | Added a page with a Azure tips. | [Azure Tips](https://github.com/stephaneey/azure-and-k8s-architecture/tree/main/azuretips.md) |
+| 2023/12/04 | These diagrams help you understand how to handle East-West traffic in AKS. | [East-West within AKS](https://github.com/stephaneey/azure-and-k8s-architecture/tree/main/networking/azure-kubernetes-service/east-west-traffic) |
+| 2023/12/04 | These diagrams help you understand how to handle East-West traffic in the traditional Azure Hub & Spoke as well as in Virtual WAN. | [East-West with Hub & Spoke and VWAN](https://github.com/stephaneey/azure-and-k8s-architecture/tree/main/networking/hub%20and%20spoke/east-west-traffic) |
+| 2023/11/25 | These diagrams help you understand how to deploy a global API platform. | [Multi-region API deployment in two flavors](https://github.com/stephaneey/azure-and-k8s-architecture/tree/main/IPaaS/api%20management/multi-region-setup) |

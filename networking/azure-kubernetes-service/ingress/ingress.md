@@ -96,6 +96,12 @@ Here are the pros & cons of such an approach.
 
 Of course, you would only deploy a dedicated ingress controller per application and traffic type if exposure outside of the cluster, internet or not, is required.
 
+# General remark
+
+Whatever topology you choose, you should also make sure to use:
+
+- Taints & tolerations if you want your ingress controllers to run on nodes of a specific node pools
+- Make sure to assess the externalTrafficPolicy, which by default is set to Cluster. This causes every node in the cluster to play a role in the ingress function. If you want to route ingress traffic to specific nodes only, this should be set to Local but they are consequences. Feel free to read a deep dive article that I wrote on that topic https://techcommunity.microsoft.com/t5/azure-networking-blog/deep-dive-into-aks-ingress-load-balancing-algorithms-and-azure/ba-p/3697818
 
 # Summary
 The Cloud native way of managing ingress traffic typically involves using one or more ingress controllers. Enterprise-grade security often requires a full isolation from Internet in order to tunnel all Internet incoming traffic to a Web Application Firewall. This typically means that you should in practice not use a service of type *LoadBalancer* with a public IP address attached to it. The number of ingress controllers varies according to whether you use shared clusters or not, the extent to which you delegate ingress management to your application teams and the security requirements you must comply to.

@@ -1,0 +1,55 @@
+# More restrictive example with app defining internal zones
+# Any change occuring in the parent folder of this file could be subject to approval by a security analyst. 
+# frontend talking to backend
+apiVersion: projectcalico.org/v3
+kind: NetworkPolicy
+metadata:
+  name: allow-frontend-to-backend-fromfe
+  namespace: application2-ns1
+spec:  
+  selector: all()
+  types:  
+  - Egress  
+  egress:
+  - action: Allow
+    destination:      
+      namespaceSelector: "applicationcode == 'application2' && zone == 'backend'"    
+      
+---
+#backend accepeting traffic from frontend and going to data
+apiVersion: projectcalico.org/v3
+kind: NetworkPolicy
+metadata:
+  name: allow-frontend-to-backend-frombe
+  namespace: application2-ns2
+spec:  
+  selector: all()
+  types:  
+  - Ingress
+  - Egress  
+  ingress:
+  - action: Allow
+    source:
+      namespaceSelector: "applicationcode == 'application2' && zone == 'frontend'"            
+  egress:
+  - action: Allow
+    destination:
+      namespaceSelector: "applicationcode == 'application2' && zone == 'data'"     
+      
+---
+# data accepting traffic from backend
+apiVersion: projectcalico.org/v3
+kind: NetworkPolicy
+metadata:
+  name: allow-intra-application-traffic
+  namespace: application2-ns3
+spec:  
+  selector: all()
+  types:
+  - Ingress  
+  ingress:
+  - action: Allow
+    source:
+      namespaceSelector: "applicationcode == 'application2' && zone == 'backend'"  
+      
+---

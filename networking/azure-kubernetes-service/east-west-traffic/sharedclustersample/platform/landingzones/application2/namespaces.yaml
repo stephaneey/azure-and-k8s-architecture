@@ -1,0 +1,25 @@
+# namespaces of application 1
+apiVersion: v1
+kind: Namespace 
+metadata:
+  name: application2-ns1
+  labels:
+    applicationcode: application2
+    zone: frontend
+---
+apiVersion: v1
+kind: Namespace 
+metadata:
+  name: application2-ns2
+  labels:
+    applicationcode: application2
+    zone: backend
+---
+apiVersion: v1
+kind: Namespace 
+metadata:
+  name: application2-ns3
+  labels:
+    applicationcode: application2
+    zone: data
+---

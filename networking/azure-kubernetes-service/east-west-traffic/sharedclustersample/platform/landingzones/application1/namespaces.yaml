@@ -1,0 +1,17 @@
+# namespaces of application 1
+apiVersion: v1
+kind: Namespace 
+metadata:
+  name: application1-ns1
+  labels:
+    applicationcode: application1
+    zone: application1 #use this if you don't have specific layers
+---
+apiVersion: v1
+kind: Namespace 
+metadata:
+  name: application1-ns2
+  labels:
+    applicationcode: application1
+    zone: application1 #use this if you don't have specific layers
+---

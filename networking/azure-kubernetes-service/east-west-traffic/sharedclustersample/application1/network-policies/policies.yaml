@@ -1,0 +1,40 @@
+# The below policy is rather permissive as it authorizes bidirectional traffic between the namespaces application1-ns1 and application1-ns2, which both belong to application1.
+# Any change occuring in the parent folder of this file could be subject to approval by a security analyst. 
+apiVersion: projectcalico.org/v3
+kind: NetworkPolicy
+metadata:
+  name: allow-intra-application-traffic
+  namespace: application1-ns2
+spec:  
+  selector: all()
+  types:
+  - Ingress
+  - Egress
+  ingress:
+  - action: Allow
+    source:
+      namespaceSelector: applicationcode == 'application1'
+  egress:
+  - action: Allow
+    destination:
+      namespaceSelector: applicationcode == 'application1'
+---
+apiVersion: projectcalico.org/v3
+kind: NetworkPolicy
+metadata:
+  name: allow-intra-application-traffic
+  namespace: application1-ns1
+spec:  
+  selector: all()
+  types:
+  - Ingress
+  - Egress
+  ingress:
+  - action: Allow
+    source:
+      namespaceSelector: applicationcode == 'application1'
+  egress:
+  - action: Allow
+    destination:
+      namespaceSelector: applicationcode == 'application1'
+---

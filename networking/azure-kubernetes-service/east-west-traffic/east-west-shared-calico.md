@@ -23,11 +23,11 @@ In this scenario, we have the following stakeholders:
 
 This view shows the logical blocks. The platform team has its own dedicated repo, as well as each application. Network policies can be subject to approval through the use of folder-specific pipelines that are triggered based on changes on the network folder:
 
-![alt text](trigger.png)
+![alt text](../east-west-traffic/images/trigger.png)
 
 The approval process takes place thanks to linking the job to a specific environment (CISO in this example):
 
-![alt text](environment.png)
+![alt text](../east-west-traffic/images/environment.png)
 
 This allows a security analyst to review changes and approve or reject them. You may as well only involve a security analyst upon pull requests including changes to this network policies folder. You'll adapt this approach according to the branching strategy you have opted for (Trunk, GitFlow GitLab, etc.). Now the challenge is to make sure the security analyst knows what he is supposed to approve/reject, as we can't expect everyone to be able to understand how Calico Network Policies work. That is what we'll see in the next section. 
 
@@ -99,11 +99,6 @@ metadata:
 The *application code* label makes it clear that they belong to a given application. The zones could define any boundary you'd like such as in this case *frontend*, *backend* and *data*. In a microservices world, these zones could rather be called *bounded context*. You define whatever you want. The benefit of using such labels is that you can let application teams define their own network policies. An example of such policies could be as follows:
 
 ```
-
-```
-# More restrictive example with app defining internal zones
-
-# frontend talking to backend
 apiVersion: projectcalico.org/v3
 kind: NetworkPolicy
 metadata:
@@ -119,7 +114,6 @@ spec:
       namespaceSelector: "applicationcode == 'application2' && zone == 'backend'"    
       
 ---
-#backend accepeting traffic from frontend and going to data
 apiVersion: projectcalico.org/v3
 kind: NetworkPolicy
 metadata:
@@ -140,7 +134,6 @@ spec:
       namespaceSelector: "applicationcode == 'application2' && zone == 'data'"     
       
 ---
-# data accepting traffic from backend
 apiVersion: projectcalico.org/v3
 kind: NetworkPolicy
 metadata:
@@ -155,7 +148,7 @@ spec:
     source:
       namespaceSelector: "applicationcode == 'application2' && zone == 'backend'"        
 ---
-
+```
 In the above example, I defined an NTIER architecture (frontend, backend and data layers) and I define how layers can talk to each other within the application landing zone. With such an approach, we can brief the security analyst to check that any *selector* or *namespaceSelector* that omits the *applicationcode* (or use another code than the one allocated to the application landing zone) will cause the application to leave its own boundaries, which should be subject to further investigation.
 
 I have crafted a full example that is available [here](../east-west-traffic/sharedclustersample/) to let you play and get started if you want to try out this approach. I come with the following structure to illustrate what I explained in the above sections:

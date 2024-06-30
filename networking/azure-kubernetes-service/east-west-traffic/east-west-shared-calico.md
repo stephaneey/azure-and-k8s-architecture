@@ -4,14 +4,14 @@
 
 In a traditional Hub & Spoke topology, each application sits in its very own spoke virtual network and it is a common practice to let the application teams rule the intra-vnet traffic or at least not to route intra-vnet traffic to an external appliance. Any spoke to spoke traffic is however routed to an appliance to ensure that extra security controls take place when the application goes beyond its own boundaries. Inter-vnet traffic is often subject to firewall change requests and the security/network teams can approve/reject the various flows and have a complete oversight over the entire network landscape.
 
-As highlighted in this section and in this blob post, [AKS, the elephant in the Hub & Spoke room](https://techcommunity.microsoft.com/t5/microsoft-developer-community/aks-the-elephant-in-the-hub-amp-spoke-room-deep-dive/ba-p/3635985), a **shared** AKS cluster breaks the Hub & Spoke model since a single cluster cannot span multiple spokes. If we were to make a network analogy, we could consider the cluster as the VNET and the namespace as a subnet. The problem is that in the Hub & Spoke model, all the subnets typically belong to a single application while a shared cluster hosts namespaces from various workloads. The challenge with this resides in the fact that it is harder to involve every stakeholder in the Cloud native world where everything is 'as code'.
+As highlighted in this GitHub repo and in this blob post, [AKS, the elephant in the Hub & Spoke room](https://techcommunity.microsoft.com/t5/microsoft-developer-community/aks-the-elephant-in-the-hub-amp-spoke-room-deep-dive/ba-p/3635985), a **shared** AKS cluster breaks the Hub & Spoke model because a single cluster cannot span multiple spokes, while still hosting multiple applications. If we were to make a network analogy, we could consider the cluster as the VNET and the namespace as a subnet. The problem is that in the Hub & Spoke model, all the subnets typically belong to a single application while a shared cluster hosts namespaces from various workloads. Moreover, often enough, a single application has more than one namespace. The challenge with this resides in the fact that it is harder to involve every stakeholder in the Cloud native world where everything is *as code*. 
 
 The purpose of this page is to depict a possible approach.
 
 ## Stakeholders
 In this scenario, we have the following stakeholders:
 
-- Platform team, in charge of the deploying the infrastructure components of the shared AKS cluster. The team is also in charge of deploying the load balancers and global rules such as Global Network Policies. Among these global policies, a global deny as well as a global allow to DNS and platform services such as service meshes should be defined. At last, the platform team is also responsible to deploy what I could call *AKS landing zones*. Following the same idea of an Azure Landing Zone, we may consider that one or more namespaces represent the landing zone of a single application in AKS.
+- Platform team, in charge of the deploying the infrastructure components of the shared AKS cluster. The team is also in charge of deploying the load balancers and global rules such as Global Network Policies. Among these global policies, a global deny as well as a global allow to DNS and platform services such as service meshes should be defined. At last, the platform team is also responsible to deploy what I would call *AKS landing zones*. Following the same idea of an Azure Landing Zone, we may consider that one or more namespaces represent the landing zone of a single application in AKS.
 
 - Application teams, in charge of deploying their applications and their internal flows. Because an application might have one or more namespaces and because a namespace-scoped Network Policy will take precedence over the Global Deny policy, some extra checks will be required to prevent unexpected inter-application traffic.
 
@@ -149,9 +149,9 @@ spec:
       namespaceSelector: "applicationcode == 'application2' && zone == 'backend'"        
 ---
 ```
-In the above example, I defined an NTIER architecture (frontend, backend and data layers) and I define how layers can talk to each other within the application landing zone. With such an approach, we can brief the security analyst to check that any *selector* or *namespaceSelector* that omits the *applicationcode* (or use another code than the one allocated to the application landing zone) will cause the application to leave its own boundaries, which should be subject to further investigation.
+In the above example, I defined an NTIER architecture (frontend, backend and data layers) and I define how layers can talk to each other within the application landing zone. With such an approach, **we can brief the security analyst to focus mostly on *selector* and *namespaceSelector* for which the *applicationcode* is ommited or wrong. In such a case, the application would leave its own boundaries, which should be subject to further investigation**.
 
-I have crafted a full example that is available [here](../east-west-traffic/sharedclustersample/) to let you play and get started if you want to try out this approach. I come with the following structure to illustrate what I explained in the above sections:
+I have crafted a full example which is available [here](../east-west-traffic/sharedclustersample/) to let you play and get started if you want to try out this approach. I come with the following structure to illustrate what I explained in the above sections:
 
 ![alt text](../east-west-traffic/images/hierarchy.png)
 
@@ -160,10 +160,10 @@ Of course, in the target CI/CD platform, you would split that across different r
 ## Conclusion
 It is possible to involve the security department in the review process and escape the traditional *Firewall Change Request* ticket by:
 
-- mimicking the Azure Landing Zone approach
-- leveraging the dynamic nature of network policies together with the various techniques such as branching, pull requests, approvals, etc. made available by CI/CD platforms.
+- Considering AKS Landing Zones, consisting of one or more namespaces dedicated to an application and identified as such.
+- Leveraging the dynamic nature of network policies thanks to landing zone labels used in policy rules. 
+- Leveraging CI/CD platforms to orchestrate everything and let CISO approve network policy changes.
 
-## Remarks
+## Remark
 
-When managing shared clusters at scale, you should consider Enterprise-grade solutions such as Calico Enterprise. This applies to any technology (Service Meshes, etc.) that you plan to use as part of your reference architecture. 
-
+When managing shared clusters at scale, you should consider Enterprise-grade solutions such as Calico Enterprise. This remark applies to any technology (Service Meshes, etc.) that you plan to use as part of your reference architecture. 

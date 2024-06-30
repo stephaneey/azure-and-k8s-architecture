@@ -166,4 +166,4 @@ It is possible to involve the security department in the review process and esca
 
 ## Remark
 
-When managing shared clusters at scale, you should consider Enterprise-grade solutions such as Calico Enterprise. This remark applies to any technology (Service Meshes, etc.) that you plan to use as part of your reference architecture. 
+When managing shared clusters at scale, you should consider Enterprise-grade solutions such as Calico Enterprise, because they often with admin consoles spanning multiple clusters, which gives you a complete oversight of your K8s landscape. This remark applies to any technology (Service Meshes, etc.) that you plan to use as part of your reference architecture. 

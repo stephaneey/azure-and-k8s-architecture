@@ -7,6 +7,8 @@ Each folder has purpose-built diagrams along with markdown files that highlights
 
 | Release date | Description | Link |
 | ----------- | ----------- | ----------- |
+| 2024/06/30 | AKS Landing Zones and Calico Network Policies. | [aks-lz-calico](./networking/azure-kubernetes-service/east-west-traffic/east-west-shared-calico.md) |
+
 | 2024/05/18 | Event Driven Architecture - Network Flows. | [eda-network-flows](./cheat%20sheets/eda-network-flows.md) |
 | 2024/04/21 | Managing Ingress traffic with AKS. | [Ingress with AKS](https://github.com/stephaneey/azure-and-k8s-architecture/tree/main/networking/azure-kubernetes-service/ingress/ingress.md) |
 | 2024/04/21 | Managing Egress traffic with AKS. | [Egress with AKS](https://github.com/stephaneey/azure-and-k8s-architecture/tree/main/networking/azure-kubernetes-service/egress/egress.md) |

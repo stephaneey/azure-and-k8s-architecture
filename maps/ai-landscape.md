@@ -3,7 +3,7 @@
 > DISCLAIMER: AI is a fast moving area so the map is certainly not exhaustive. I'll however try to keep it up to date.
 
 ## Introduction
-Note: here is a pointer to the [original map](https://app.mindmapmaker.org/#m:mmea793b1ef4e84aad86363fb430838d92).
+Note: here is a pointer to the [original map](https://app.mindmapmaker.org/#m:mm9699b1945d814c5eae42697b078356c4).
 
 ![ailandscapemap](./images/ai-map.png)
 

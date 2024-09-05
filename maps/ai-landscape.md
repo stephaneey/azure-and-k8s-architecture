@@ -3,7 +3,7 @@
 > DISCLAIMER: AI is a fast moving area so the map is certainly not exhaustive. I'll however try to keep it up to date.
 
 ## Introduction
-Note: here is a pointer to the [original map](https://app.mindmapmaker.org/#m:mm9699b1945d814c5eae42697b078356c4).
+Note: here is a pointer to the [original map](https://app.mindmapmaker.org/#m:mma01cbab44d49414c92065ef1fa9f6305).
 
 ![ailandscapemap](./images/ai-map.png)
 
@@ -41,4 +41,4 @@ I shed some light on typical patterns such as RAG, AI gateway, etc. and the typi
 A diversity of services and tools you can use to build AI solutions.
 
 ## Online MindMap Maker tool
-The [original map](https://app.mindmapmaker.org/#m:mm9699b1945d814c5eae42697b078356c4) is available online. Since this free online tool archives every map that is older than a year, here is a direct link to the corresponding [JSON file](./AI-landscape.json), which you can reimport in the online tool should the map not be available anymore.
+The [original map](https://app.mindmapmaker.org/#m:mma01cbab44d49414c92065ef1fa9f6305) is available online. Since this free online tool archives every map that is older than a year, here is a direct link to the corresponding [JSON file](./AI-landscape.json), which you can reimport in the online tool should the map not be available anymore.

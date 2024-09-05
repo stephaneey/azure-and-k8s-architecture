@@ -5,6 +5,7 @@ The purpose of the maps is to help you find your way in a given technology. Maps
 
 | Map 
 | ----------- 
+| [The Microsoft AI Lanscape](./ai-landscape.md) 
 | [The Azure API Management Map](./apim.md) 
 | [The OpenId Connect Map](./oidc.md)
 | [The Istio Map](./istio.md) 

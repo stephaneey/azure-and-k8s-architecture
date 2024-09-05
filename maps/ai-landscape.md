@@ -41,4 +41,4 @@ I shed some light on typical patterns such as RAG, AI gateway, etc. and the typi
 A diversity of services and tools you can use to build AI solutions.
 
 ## Online MindMap Maker tool
-The [original map](https://app.mindmapmaker.org/#m:mma01cbab44d49414c92065ef1fa9f6305) is available online. Since this free online tool archives every map that is older than a year, here is a direct link to the corresponding [JSON file](./AI-landscape.json), which you can reimport in the online tool should the map not be available anymore.
+The [original map](https://app.mindmapmaker.org/#m:mma01cbab44d49414c92065ef1fa9f6305) is available online. Since this free online tool archives every map that is older than a year, here is a direct link to the corresponding [JSON file](./json/AI-landscape.json), which you can reimport in the online tool should the map not be available anymore.

@@ -1,4 +1,7 @@
 
+# APIM Hotrod Show
+Hey folks, we're discussing many API Management-related topics on our Youtube channel, so feel free to watch and subsribe.
+![alt text](../images/apimhotrodshow.png)
 # Diagram
 ![apim-topologies](../images/apim-topologies.png)
 

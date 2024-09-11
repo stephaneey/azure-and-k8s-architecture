@@ -1,3 +1,6 @@
+# APIM Hotrod Show
+Hey folks, we're discussing many integration-related topics on our Youtube channel, so feel free to watch and subsribe.
+![alt text](/images/apimhotrodshow.png)
 # Integration Platform as a Service (IPaaS)
 
 IPaaS is a set of Azure services that are meant to satisfy most integration patteners. The main integration architecture patterns are:

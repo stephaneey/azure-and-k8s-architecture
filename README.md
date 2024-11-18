@@ -7,6 +7,7 @@ Each folder has purpose-built diagrams along with markdown files that highlights
 
 | Release date | Description | Link |
 | ----------- | ----------- | ----------- |
+| 2024/11/17 | Hybrid patterns with API Management - DC to Cloud | [apim-dc-cloud](./IPaaS/api%20management/hybrid.md) |
 | 2024/09/05 | The Microsoft AI Lanscape Map | [microsoft-ai-map](./maps/ai-landscape.md) |
 | 2024/06/30 | AKS Landing Zones and Calico Network Policies. | [aks-lz-calico](./networking/azure-kubernetes-service/east-west-traffic/east-west-shared-calico.md) |
 | 2024/05/18 | Event Driven Architecture - Network Flows. | [eda-network-flows](./cheat%20sheets/eda-network-flows.md) |

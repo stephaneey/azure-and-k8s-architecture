@@ -49,6 +49,7 @@ This type of integration requires a central integration team, which conflicts wi
 
 | Diagram | Description |Link
 | ----------- | ----------- | ----------- |
+| Hybrid APIs DC to Cloud| This page describes how to expose Cloud-based APIs to on-premises clients|[hybrid-api-dc2cloud](../api%20management/hybrid.md) |
 | BizTalk-like IPaaS | This diagram shows how to leverage IPaaS to have a Bitalk-like experience, along with the pros & cons of such an approach|[BizTalk-like-IPaaS](biztalk-like-IPaaS-pattern.md) |
 | Point-to-point (P2P) pattern | Explanation of P2P with benefits and drawbacks|[P2P-pattern](./event-driven-and-messaging-architecture/point-to-point.md) |
 | Load Levelling pattern | Explanation of Load Levelling, which is some sort of P2P within a single application|[load-levelling-pattern](./event-driven-and-messaging-architecture/load-levelling.md) |

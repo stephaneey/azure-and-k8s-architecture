@@ -8,7 +8,6 @@ Each folder has purpose-built diagrams along with markdown files that highlights
 | Release date | Description | Link |
 | ----------- | ----------- | ----------- |
 | 2024/12/19 | Exposing APIs to Internet Consumers - domain strategies | [apim-domain-strategies](./IPaaS/api%20management/sharing/exposing-shared-apim.md) |
-| 2024/11/18 | Hybrid patterns with API Management - Cloud to DC | [apim-cloud-dc](./IPaaS/api%20management/hybrid-cloud-to-dc.md) |
 | 2024/11/17 | Hybrid patterns with API Management - DC to Cloud | [apim-dc-cloud](./IPaaS/api%20management/hybrid.md) |
 | 2024/09/05 | The Microsoft AI Lanscape Map | [microsoft-ai-map](./maps/ai-landscape.md) |
 | 2024/06/30 | AKS Landing Zones and Calico Network Policies. | [aks-lz-calico](./networking/azure-kubernetes-service/east-west-traffic/east-west-shared-calico.md) |

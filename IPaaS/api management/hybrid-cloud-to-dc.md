@@ -6,9 +6,9 @@ Hey folks, we're discussing many API Management-related topics on our Youtube ch
 
 # API Management hybrid setup Cloud to on-premises - Introduction
 In some scenarios, you must consume on-premises services through API integration. There are multiple ways to achieve this.
-# Hub & Spoke topology
 
-## On-premises APIs proxied by Azure API Management in the Hub
+
+# On-premises APIs proxied by Azure API Management in the Hub
 Note that I covered different sceanrios about where to deploy your API Management instance in [this page](hybrid.md). All these options also apply here but in this page, I prefer to focus on the fact that you use APIM as a proxy.  
 ![apim-proxy](apim-proxy.png)
 
@@ -20,7 +20,7 @@ There are two routes here, the green and red one. Both are valid, depending on y
 The green route involves the firewall twice while the red one only involves it once. This lets you control that the spoke can talk to APIM and that APIM can talk to the intended apim-proxy backend. On the other hand, because spoke are peered to the hub, they can technically directly connect to APIM by taking advantage of Virtual Network Peering. In any case, you must send APIM back to the firewall (except for ApiManagement tag) to control policies such as the *Send-Request* that might directly go to Internet. 
 
 
-## Backend APIs proxied by an on-premises gateway
+# Backend APIs proxied by an on-premises gateway
 Many organizations already have an existing API gateway in front of their backend systems.
 
 ![on-premises-gateway](on-premises-gateway.png)

@@ -12,6 +12,7 @@ Hybrid applications have some components in the Cloud and some others on-premise
 ## API Management in the Hub
 
 ![apim-in-hub](../images/apim-inhub.png)
+
 In any Hub & Spoke topology, you will at least have one hub that bridges the on-premises environment and the Cloud. Some organizations work with multiple hubs that deal with specific network duties, on top of segregating production and non-production environments. For sake of simplicity, let us consider a single hub as illustrated in the above diagram. 
 
 Whether to put API Management in the hub or not is more a question of philosophy than a technical matter. Some people don't want to put anything else but an NVA, while I am rather advocating to equip the hub with whatever is required to let it perform its function. You should of course isolate the API Management into its own resource group to avoid mixing RBAC-related matters with other components of the hub.

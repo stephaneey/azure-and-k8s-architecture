@@ -22,6 +22,8 @@ On top, these patterns often rely on orchestrations or choreographies.
 
 | Diagram | Description |Link
 | ----------- | ----------- | ----------- |
+| Domain Strategies | This page documents the different options available in terms of how to expose APIs to the external world.|[domain-strategies-apim](./api%20management/sharing/exposing-shared-apim.md) |
+
 | Hybrid setup | This page documents the different options to host a shared API Management instance to let on-premises clients consume Cloud-hosted APIs.|[Hybrid-APIM-DC2Cloud](./api%20management/hybrid.md) |
 
 | BizTalk-like IPaaS | This diagram shows how to leverage IPaaS to have a Bitalk-like experience, along with the pros & cons of such an approach|[BizTalk-like-IPaaS](./patterns/biztalk-like-IPaaS-pattern.md) |

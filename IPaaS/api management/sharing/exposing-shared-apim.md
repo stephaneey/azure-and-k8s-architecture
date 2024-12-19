@@ -1,7 +1,7 @@
 
 # APIM Hotrod Show
 Hey folks, we're discussing many API Management-related topics on our Youtube channel, so feel free to watch and subsribe.
-[![APIM Hotrod Show](../images/apimhotrodshow.png 'APIM Hotrod Show')](https://www.youtube.com/@APIMHotrod)
+[![APIM Hotrod Show](../../images/apimhotrodshow.png 'APIM Hotrod Show')](https://www.youtube.com/@APIMHotrod)
 
 
 # Exposing a shared API gateway - Domain Strategies - Introduction

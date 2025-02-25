@@ -34,6 +34,8 @@ To restrict traffic to your own Front Door instance, you can write a policy that
 This global policy makes sure all calls have to go to Front Door before hitting APIM. If you would still like to tap into specific products/APIs, you might either define this policy at another scope, either break inheritance at a lower scope.
 You should store Front Door's unique ID in a named value.
 
+Note that there is an ongoing preview to integrate Front Door with APIM behind a private endpoint. In such a setup, you would not especially be forced to check the *X-Azure-FDID* request header.
+
 ## (6) API-level Policy
 When Azure API Management is used in a multi-region setup, you cannot specify the backend service in the API settings, because you do not know in advance which regional gateway unit will be chosen. Therefore, you must write a *set-backend-service* policy to route traffic dynamically according to the chosen gateway unit. The logic is rather simple, if the EU Gateway is chosen, you route to the EU backend. You can add extra availability logic to still fallback on the other region should the default backend not be available. This heavily depends on your probing logic defined at the level of Front Door. 
 

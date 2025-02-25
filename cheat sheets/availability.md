@@ -73,7 +73,12 @@ So, for our services, we have:
 - For Container Instances: Simply don't. It is technically feasible to cook something but I wouldn't recommend going multi-region with Container Instances for web apps and APIs. You can certainly use them in a multi-region setup to handle background tasks, but you should prefer the other options for HTTP workloads.
 
 - For Azure API Management (APIM):
-  - Front Door + External Facing APIM. It can be VNET integrated with *External* mode. In 01/2024, Front Door is not able to take a fully private APIM as an origin. We could expect Front Door to be able to register private endpoints for APIM, but this is not available yet. Moreover, the premium tier of APIM does not allow the creation of private endpoints if it's already VNET integrated...
+  - Front Door + External Facing APIM. It can be VNET integrated with *External* mode. In 01/2024, Front Door is not able to take a fully private APIM as an origin. 
+  
+*Note that there is an ongoing preview to integrate Front Door with APIM behind a private endpoint. In such a setup, you would not especially be forced to check the *X-Azure-FDID* request header.*
+
+
+  We could expect Front Door to be able to register private endpoints for APIM, but this is not available yet. Moreover, the premium tier of APIM does not allow the creation of private endpoints if it's already VNET integrated...
   - When APIM is external facing, it has its own built-in Traffic Manager instance ensuring the load balancing across regional gateway units.
   - We typically restrict traffic to Front Door using APIM policies that check the presence of a specific HTTP request header that is set by Front Door itself and holds the unique identifier of the Front Door instance.
   - If APIM is VNET integrated in internal mode, you'll need Application Gateway in between. For a pure internal scenario, Azure does not provide any global load balancer that can load balance *internal-only* traffic across regions, so you have to do that on your own.

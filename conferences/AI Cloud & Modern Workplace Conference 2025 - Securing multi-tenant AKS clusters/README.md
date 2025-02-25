@@ -1,0 +1,1 @@
+Here you can find the diagrams I have explained during the AI Cloud & Modern Workplace Conference 2025 from the session *Securing multi-tenant AKS clusters*

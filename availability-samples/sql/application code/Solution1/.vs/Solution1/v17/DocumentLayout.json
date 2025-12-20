@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\steph\\source\\repos\\azure-and-k8s-architectutre\\availability-samples\\sql\\Solution1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{995ADE07-1705-44EF-8058-B53205D48B21}|sqlfailover\\sqlfailover.csproj|c:\\users\\steph\\source\\repos\\azure-and-k8s-architectutre\\availability-samples\\sql\\solution1\\sqlfailover\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{995ADE07-1705-44EF-8058-B53205D48B21}|sqlfailover\\sqlfailover.csproj|solutionrelative:sqlfailover\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\steph\\source\\repos\\azure-and-k8s-architectutre\\availability-samples\\sql\\Solution1\\sqlfailover\\Program.cs",
+              "RelativeDocumentMoniker": "sqlfailover\\Program.cs",
+              "ToolTip": "C:\\Users\\steph\\source\\repos\\azure-and-k8s-architectutre\\availability-samples\\sql\\Solution1\\sqlfailover\\Program.cs",
+              "RelativeToolTip": "sqlfailover\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAACsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-20T09:24:46.013Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

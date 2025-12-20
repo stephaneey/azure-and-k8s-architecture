@@ -1,10 +1,4 @@
-# --- DISCLAIMER ---
-# The purpose of this code is to demonstrate failover groups. Test it along with the
-# provided console app which you can run while you failover to see the behavior.
-# I'm opening those SQL servers to the entire world
-# I'm using SQL Authentication instead of Entra ID
-# An enterprise-grade solution should look like what I explain in the diagrams (private endpoints, Entra ID, etc.)
-# -----------------
+
 resource "azurerm_mssql_server" "sql" {
   name                         = var.name
   resource_group_name          = var.resource_group_name

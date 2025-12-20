@@ -1,8 +1,8 @@
-# Availabilty Samples
+# Availability Samples
 
-This section contains examples of disaster recovery compliant apps with tips and tricks to minmize downtime.
+This section showcases examples of applications designed for disaster recovery, with practical tips and tricks to reduce downtime.
 
-Each folder has purpose-built diagrams along with markdown files that highlights the attention points and shed some light on the design choices.
+Each folder contains purpose-built diagrams and Markdown documentation that call out critical attention points and provide insight into the architectural decisions.
 
 | Release date | Description | Link |
 | ----------- | ----------- | ----------- |

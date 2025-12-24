@@ -1,0 +1,97 @@
+## Build outputs
+bin/
+obj/
+[Bb]uild/
+[Bb]uilds/
+x64/
+x86/
+ARM/
+ARM64/
+Debug/
+Release/
+*.log
+
+## Visual Studio user-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.vcxproj.user
+
+## Visual Studio cache
+.vs/
+.vscode/
+
+## NuGet
+*.nupkg
+*.snupkg
+packages/
+*.nuget.props
+*.nuget.targets
+
+## .NET Core / .NET 6+
+*.deps.json
+*.runtimeconfig.json
+*.dll
+*.exe
+*.pdb
+
+## Publish outputs
+publish/
+app.publish/
+
+## Azure
+*.azurePubxml
+*.publishsettings
+
+## Resharper / Rider
+_ReSharper*/
+*.DotSettings.user
+.idea/
+
+## Test results
+TestResults/
+*.coverage
+*.coveragexml
+
+## Entity Framework
+Migrations/obj/
+
+## Temporary files
+*.tmp
+*.temp
+*.cache
+*.bak
+
+## Logs
+*.svclog
+*.log
+
+## Others
+*.dbmdl
+*.jfm
+*.tlog
+*.ipch
+*.opendb
+*.VC.db
+*.VC.opendb
+
+## Node (if using front-end assets)
+node_modules/
+npm-debug.log
+yarn-error.log
+# Local Terraform state
+*.tfstate
+*.tfstate.*
+
+# Crash logs
+crash.log
+crash.*.log
+
+# Terraform plan files
+*.tfplan
+*.plan
+
+# Module directories
+.terraform/
+.terraform.lock.hcl

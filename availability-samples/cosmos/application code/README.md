@@ -1,0 +1,1 @@
+The code is there for your convenience but the app has been packaged as a zip file and is deployed by Terraform (see terraform section).

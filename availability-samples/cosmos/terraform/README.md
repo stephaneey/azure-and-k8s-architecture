@@ -2,11 +2,12 @@
 
 This sample code deploys:
 
-- Two webapps, one in Belgium Central and one in France Central
+- Two webapps, one in Belgium Central and one in France Central and their own Cosmos DB settings. Each region specifies its preferred Cosmos DB region. 
 - One Cosmos DB account with multi-region writes  
 - It pushes the application code (zip file) to both web apps
 
-The end result looks like this:
+The end result looks like this diagram.
+
 ![alt text](simplified.png)
 
 To run this:

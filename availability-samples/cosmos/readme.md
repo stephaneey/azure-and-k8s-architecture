@@ -9,7 +9,7 @@ This diagram shows an end-to-end architecture where the entry point is Front Doo
 
 Note: I delivered a 25-minute live demo of the above setup during a Microsoft API Management event (https://www.youtube.com/watch?v=dbwvhGVV3mU starting at minute 53 of the recording). Microsoft slightly fast-forwarded the video, so the pace is a bit quicker, but it remains possible to follow if you stay focused 😊.
 
-With the recent events affecting Azure Front Door, an even more robust approach consists of adding Traffic Manager to the mix. Microsoft documented this here https://learn.microsoft.com/en-us/azure/architecture/guide/networking/global-web-applications/mission-critical-global-http-ingress. Here is MS diagram extracted from the online doc:
+With the recent events affecting Azure Front Door, an even more robust approach consists of adding Traffic Manager to the mix. Microsoft documented this here https://learn.microsoft.com/en-us/azure/architecture/guide/networking/global-web-applications/mission-critical-global-http-ingress. Here is the MS diagram extracted from the online doc:
 
 ![alt text](mission-critical.png)
 

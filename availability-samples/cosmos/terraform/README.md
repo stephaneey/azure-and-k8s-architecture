@@ -18,7 +18,11 @@ Once deployed, you should end up with the following resources (names vary):
 
 ![alt text](resources.png)
 
-To test the API, you can use Postman or Fiddler by first performing a POST request, to create a document:
+To test the API locally, you'll have to give yourself access to the Cosmos database. You can run the following command:
+
+`az cosmosdb sql role assignment create --account-name <your account> --resource-group <your rg> --role-assignment-id <a guid> --role-definition-id /subscriptions/<your subscription id>/resourceGroups/<your rg>/providers/Microsoft.DocumentDB/databaseAccounts/<your account>/sqlRoleDefinitions/00000000-0000-0000-0000-000000000002 --principal-id <object ID of your user> --scope "/subscriptions/<your subscription id>/resourceGroups/<your rg>/providers/Microsoft.DocumentDB/databaseAccounts/<your account>`
+
+To test the Azure-hosted APIs, you can use Postman or Fiddler by first performing a POST request, to create a document:
 
 ![alt text](post.png)
 
@@ -35,5 +39,3 @@ Now, you can start playing with Cosmos to see how both APIs react. Here are the 
 - Offline a Cosmos region. In such a case, an automatic failover should take place to the remaining region. Note that you must create a support ticket to get it back online. Just try this one after having tried the other changes.
 
 Make sure to run both POST and GET request between each steps and check which Cosmos backend instance is used by the API. You'll notice that whatever you do at Cosmos level, the backend is smart enough to keep working.
-
-PS C:\Users\steph> az cosmosdb sql role assignment create --account-name cosmos-ai7i1b --resource-group cosmos-rg2 --role-assignment-id cb8ed2d7-2371-4e3c-bd31-6cc1560e84f8 --role-definition-id /subscriptions/f63a908a-c054-4d45-a1fd-1eadaee67ffc/resourceGroups/cosmos-rg2/providers/Microsoft.DocumentDB/databaseAccounts/cosmos-ai7i1b/sqlRoleDefinitions/00000000-0000-0000-0000-000000000002 --principal-id 0698461f-4c4c-4453-be00-b56565e4081b --scope "/subscriptions/f63a908a-c054-4d45-a1fd-1eadaee67ffc/resourceGroups/cosmos-rg2/providers/Microsoft.DocumentDB/databaseAccounts/cosmos-ai7i1b"

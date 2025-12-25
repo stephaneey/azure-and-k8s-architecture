@@ -26,12 +26,12 @@ builder.Services.AddSingleton((IServiceProvider serviceProvider) =>
     var configuration = serviceProvider.GetRequiredService<IConfiguration>();
     string endpointUrl = configuration["EndpointUrl"];    
 
-    var preferredRegions = configuration.GetSection("PreferredRegions").Get<List<string>>();
+    var preferredRegions = new List<string> { configuration["PreferredRegions"] };
   
   return new CosmosClient(endpointUrl, new DefaultAzureCredential(), new CosmosClientOptions  
   {
         ApplicationPreferredRegions = preferredRegions
-    });    
+  });    
 });
 
 builder.Services.AddSingleton(sp =>

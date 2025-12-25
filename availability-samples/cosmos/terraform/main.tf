@@ -33,7 +33,7 @@ module "belgiumwebsite"{
   resource_group_name = module.cosmos_resource_group.name  
   location = module.cosmos_resource_group.location
   app_settings = {    
-    "PreferredRegions" = "[ \"BelgiumCentral\" ]"
+    "PreferredRegions" = "BelgiumCentral"
     "EndpointUrl" = module.cosmos_account.endpoint
     "db" = var.cosmosdb
     "container" = var.cosmoscontainer
@@ -46,8 +46,10 @@ module "francewebsite"{
   resource_group_name = module.cosmos_resource_group.name  
   location = "francecentral"
   app_settings = {    
-    "PreferredRegions" = "[ \"FranceCentral\" ]"
+    "PreferredRegions" = "FranceCentral"
     "EndpointUrl" = module.cosmos_account.endpoint
+    "db" = var.cosmosdb
+    "container" = var.cosmoscontainer
   }  
 }
 

@@ -6,6 +6,9 @@ This sample code deploys:
 - One Cosmos DB account with multi-region writes  
 - It pushes the application code (zip file) to both web apps
 
+The end result looks like this:
+![alt text](simplified.png)
+
 To run this:
 
 - Make sure to have enough permission, ideally subscription owner

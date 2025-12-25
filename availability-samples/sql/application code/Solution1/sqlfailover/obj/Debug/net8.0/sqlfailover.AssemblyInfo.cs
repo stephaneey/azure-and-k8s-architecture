@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("sqlfailover")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fb3146af5217ef10eb3579e2c6eb9b32ec70541f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+69bc0d5464cc6741261ac1b84046ac4c436c7c91")]
 [assembly: System.Reflection.AssemblyProductAttribute("sqlfailover")]
 [assembly: System.Reflection.AssemblyTitleAttribute("sqlfailover")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

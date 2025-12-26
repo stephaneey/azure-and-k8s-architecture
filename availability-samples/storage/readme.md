@@ -32,3 +32,7 @@ So, with Storage Accounts, you must use separate DNS zones if you don’t want a
 
 Each region has its own private DNS zone and each holds a set of private endpoints targeting both primary and secondary. Now, both mystorage and mystorage-secondary are resolved from both sides. From North Europe, a call to mystorage would go through 10.10.0.4 and hit the West Europe location. 
 After full regional outage, West Europe is lost but 10.100.0.4 is still targeting the primary, which means, the promoted North Europe location, while the secondary endpoint is lost again. This setup doesn’t require any intervention other than performing the failover itself.
+
+
+# Testing Azure Storage Failover with a concrete use case
+Download the code and read the instructions available [here](./application-code/readme.md)

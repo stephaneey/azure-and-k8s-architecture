@@ -1,0 +1,9 @@
+{
+    "IsEncrypted": false,
+  "Values": {
+    //"AzureWebJobsStorage": "put here the actual connection string of your storage account to test the failover from your local environment",
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated"
+
+  }
+}

@@ -1,7 +1,7 @@
 # Simple Durable Function
 An enterprise-grade version of this application would look like this diagram.
 
-![alt text](enterprise-grade.png)
+![alt text](entreprise-grade.png)
 
 Where your orchestrator, hosted on an App Service levering VNET integration is getting access to the Storage Account through 10.0.0.4 to persist state. The North Europe version of the orchestrator could already be deployed but stopped to avoid possible interferences. 
 In case of regional outage or DR test, you failover the Storage Account and once the failover completed, you start the orchestrator in North Europe that now points to the new primary. Durable functions make mostly use of Queues and Tables to work and persist state. Once the failover completed, you should be able to resume ongoing orchestrations. However, since the replication process is asynchronous, you may lose some of them.

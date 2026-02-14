@@ -7,16 +7,20 @@ Where your orchestrator, hosted on an App Service levering VNET integration is g
 In case of regional outage or DR test, you failover the Storage Account and once the failover completed, you start the orchestrator in North Europe that now points to the new primary. Durable functions make mostly use of Queues and Tables to work and persist state. Once the failover completed, you should be able to resume ongoing orchestrations. However, since the replication process is asynchronous, you may lose some of them.
 To help you test this scenario, I have crafted a very little Durable Function that is just waiting for an external event:
 
-`public static async Task RunOrchestrator(
+```csharp
+public static async Task RunOrchestrator(
     [OrchestrationTrigger] TaskOrchestrationContext context)
 {
     ILogger logger = context.CreateReplaySafeLogger(nameof(Function1));
     logger.LogInformation("Waiting for external event");      
     var eventData=await context.WaitForExternalEvent<DateTime>("event");
     logger.LogInformation("external event received {0}", eventData.ToString());        
-}`
+}
+```
+
 The orchestration is started by this HTTP triggered function:
-`public static async Task<HttpResponseData> HttpStart(
+```csharp
+public static async Task<HttpResponseData> HttpStart(
     [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequestData req,
     [DurableClient] DurableTaskClient client,
     FunctionContext executionContext)
@@ -30,7 +34,8 @@ The orchestration is started by this HTTP triggered function:
     logger.LogInformation("Started orchestration with ID = '{instanceId}'.", instanceId);
         
     return await client.CreateCheckStatusResponseAsync(req, instanceId);
-}`
+}
+```
 
 The idea is to start a new orchestration by calling the HTTP triggered function:
 ![alt text](orchestration-start.png) 

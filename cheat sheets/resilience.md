@@ -79,7 +79,7 @@ In this setup, a single DNS zone hosts the private endpoint records for both the
 To be prepared for failover, it is important to have a private endpoint registered on the secondary server as well and residing in the secondary region's vnet. In our diagram, this corresponds to 10.100.0.4. However, this endpoint is not reachable from the primary region unless the virtual networks are peered directly or connected through a common hub.
 In most cases, we prefer to avoid this situation, as it introduces additional cross-region network dependencies. It means that using this setup, you can only talk to the global read-write endpoint from the primary region. Workloads performing read-only operations (if any) should connect from the secondary region. If you want to be able to connect to both global read-write and global read-only endpoints from both regions, consider using two separate DNS zones as shown below.
 ## DocumentDB multiple DNS zones
-![alt text](/images/docdb-multiple-zones.png)
+![alt text](./images/docdb-multiple-zones.png)
 In this setup, multiple DNS zones are used to isolate private endpoints targeting both the global read-write and global read-only endpoints, allowing each regional workload to access both endpoints.
 
 This design still introduces cross-region round trips. For example, using 10.0.0.5 from the primary region would reach the secondary instance located in the secondary region. However, the advantage is that no direct connectivity to the secondary virtual network is required.

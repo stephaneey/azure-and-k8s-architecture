@@ -131,17 +131,17 @@ By contrast, synchronous replication impacts performance and introduces a depend
 Last, I finish with a first-class citizen in any Azure architecture, namely API Management. I explore a possible setup with APIM Premium v2, which as of 03/2026 doesn't support private endpoints yet and consequently, cannot be directly behind Azure Front Door when not internet-facing. Some other SKUs do support private endpoints but do not have all the APIM features.
 
 # Summary of the replication techniques
-| Service Name    | Replication Method | Replica Location | Bundled |
-| -------- | ------- | ------- | ------- |
-| Azure SQL  | Geo-Replication    | Anywhere | No (separate server) |
-| Azure SQL | Failover Group     | Anywhere | No (separate server) |
-| Managed Instance    | Failover Group     | Anywhere | No (separate server) |
-| Cosmos DB    | Geo-Replication     | Not Visible | Yes |
-| DocumentDB    | Geo-Replication     | Same resource group | Separate server but must be in the same resource group |
-| Service Bus | Geo-Replication | Not Visible | Yes |
-| Service Bus | Geo-Recovery | Anywhere | No (separate instance) |
-| Event Hubs | Geo-Replication | Not Visible | Yes |
-| Event Hubs | Geo-Recovery | Anywhere | No (separate instance) |
-| Storage Account | Geo-Redundant Storage | Not Visible | Yes |
-| Storage Account | Object Replication | Anywhere | No (separate instance) |
-| API Management | Units | Anywhere | Yes |
+| Service Name    | Replication Method | Replica Location | Bundled |Single Region RTO | Single Region RPO | Cross-Region RTO | Cross-Region RPO |
+| -------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- |
+| Azure SQL  | Geo-Replication    | Anywhere | No (separate server) | Seconds | 0 | Seconds | Seconds |
+| Azure SQL | Failover Group     | Anywhere | No (separate server) | Seconds | 0 | Seconds | Seconds |
+| Managed Instance    | Failover Group     | Anywhere | No (separate server) | Seconds | 0 | Seconds | Seconds (depends on your network infra) |
+| Cosmos DB    | Geo-Replication     | Not Visible | Yes | 0 | 0 | 0 (with multi-region writes) | 0 (only with STRONG consistency) |
+| DocumentDB    | Geo-Replication     | Same resource group | Separate server but must be in the same resource group | Seconds | 0 | Seconds | Seconds |
+| Service Bus | Geo-Replication | Not Visible | Yes | 0 | 0 | Seconds | 0 with synchronous replication |
+| Service Bus | Geo-Recovery | Anywhere | No (separate instance) | 0 | 0 | Seconds | N/A (messages are not replicated) |
+| Event Hubs | Geo-Replication | Not Visible | Yes | 0 | 0 | Seconds | 0 with synchronous replication |
+| Event Hubs | Geo-Recovery | Anywhere | No (separate instance) | 0 | 0 | Seconds | N/A (events are not replicated) |
+| Storage Account | Geo-Redundant Storage | Not Visible | Yes | 0 | 0 | <1 hour | <15 minutes when using geo-priority |
+| Storage Account | Object Replication | Anywhere | No (separate instance) |0 | 0 | 0 (because of two distinct storage accounts) | <15 minutes when using geo-priority |
+| API Management | Units | Anywhere | Yes | 0 | 0 | 0 | 0 (single control plane) |

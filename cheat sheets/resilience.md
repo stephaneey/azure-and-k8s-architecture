@@ -138,10 +138,10 @@ Last, I finish with a first-class citizen in any Azure architecture, namely API 
 | Managed Instance    | Failover Group     | Anywhere | No (separate server) | Seconds | 0 | Seconds | Seconds (depends on your network infra) |
 | Cosmos DB    | Geo-Replication     | Not Visible | Yes | 0 | 0 | 0 (with multi-region writes) | 0 (only with STRONG consistency) |
 | DocumentDB    | Geo-Replication     | Same resource group | Separate server but must be in the same resource group | Seconds | 0 | Seconds | Seconds |
+| Storage Account | Geo-Redundant Storage | Not Visible | Yes | 0 | 0 | <1 hour | <15 minutes when using geo-priority |
+| Storage Account | Object Replication | Anywhere | No (separate instance) |0 | 0 | 0 (because of two distinct storage accounts) | <15 minutes when using geo-priority |
 | Service Bus | Geo-Replication | Not Visible | Yes | 0 | 0 | Seconds | 0 with synchronous replication |
 | Service Bus | Geo-Recovery | Anywhere | No (separate instance) | 0 | 0 | Seconds | N/A (messages are not replicated) |
 | Event Hubs | Geo-Replication | Not Visible | Yes | 0 | 0 | Seconds | 0 with synchronous replication |
 | Event Hubs | Geo-Recovery | Anywhere | No (separate instance) | 0 | 0 | Seconds | N/A (events are not replicated) |
-| Storage Account | Geo-Redundant Storage | Not Visible | Yes | 0 | 0 | <1 hour | <15 minutes when using geo-priority |
-| Storage Account | Object Replication | Anywhere | No (separate instance) |0 | 0 | 0 (because of two distinct storage accounts) | <15 minutes when using geo-priority |
 | API Management | Units | Anywhere | Yes | 0 | 0 | 0 | 0 (single control plane) |
